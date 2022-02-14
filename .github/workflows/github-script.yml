@@ -1,7 +1,7 @@
 name: GitHub Script - Thank you
 on:
   issues: 
-    types: [opened]
+    types: [opened, edited, reopened, labeled]
 
 # Limit the permissions of the GITHUB_TOKEN
 permissions:
