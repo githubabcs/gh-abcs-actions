@@ -1,4 +1,4 @@
-name: Self-Hosted Linux Hello
+name: Self-Hosted Linux Hello - Never run on pulic repo
 
 on:
   workflow_dispatch:
