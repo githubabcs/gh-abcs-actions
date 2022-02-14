@@ -1,2 +1,2 @@
 # gh-abcs-actions
-The GitHub ABCs workflow templates
+- The GitHub ABCs actions training with workflow templates!
