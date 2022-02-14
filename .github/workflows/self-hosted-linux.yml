@@ -10,7 +10,9 @@ on:
         
 jobs:
   say_hello: 
+    # This will not work on a public repo unless allowed
     runs-on: [self-hosted, linux, x64, self-hosted-linux]
+
     steps:
       - name: Say hello from self-hosted runner
         run: |
