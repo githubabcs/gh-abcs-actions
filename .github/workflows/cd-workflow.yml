@@ -1,0 +1,33 @@
+name: CD Workflow 
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# We only want to allow one deploy-to-prod workflow running at any point in time
+concurrency: 
+  group: cd-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    environment:
+      name: PROD
+      url: https://prod.company.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+ 
+      - name: Deploy to production
+        if: ${{ success() }}
+        run: echo "Specific deploy steps..."
+
+      - name: Upload artifact
+        if: ${{ success() && false }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-node-artifact
+          path: dist/
