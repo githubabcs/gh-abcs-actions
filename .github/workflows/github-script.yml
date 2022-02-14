@@ -2,6 +2,12 @@ name: GitHub Script - Thank you
 on:
   issues: 
     types: [opened]
+
+# Limit the permissions of the GITHUB_TOKEN
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   comment:
     runs-on: ubuntu-latest
