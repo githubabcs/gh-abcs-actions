@@ -1,7 +1,7 @@
+name: GitHub Script - Thank you
 on:
   issues: 
     types: [opened]
-
 jobs:
   comment:
     runs-on: ubuntu-latest
