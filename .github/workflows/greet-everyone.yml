@@ -1,7 +1,13 @@
 name: Greet Everyone
 # This workflow is triggered on pushes to the repository.
 on: 
-  [push]
+  push:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'What is your name?'
+        required: false
+        default: 'Octocat'
 
 jobs:
   greet-users:
@@ -14,7 +20,7 @@ jobs:
       - name: Hello world
         uses: actions/hello-world-javascript-action@v1
         with:
-          who-to-greet: "Octocat"
+          who-to-greet: "${{ github.event.inputs.name }}"
         id: hello
       # This step prints an output (time) from the previous step's action.
       - name: Echo the greeting's time
