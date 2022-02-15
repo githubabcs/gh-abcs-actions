@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
   issues: write
-  
+
 jobs:
   
   js-custom-actions:
@@ -21,13 +21,16 @@ jobs:
 
       - name: hello-action
         uses: ./.github/actions/hello-world-js
+        if: ${{ success() && false }}
 
       - name: ha-ha
         uses: ./.github/actions/joke-action
+        continue-on-error: true
         id: jokes
 
       - name: create-issue
         uses: ./.github/actions/issue-maker-js
+        continue-on-error: true
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           joke: ${{steps.jokes.outputs.joke-output}}
