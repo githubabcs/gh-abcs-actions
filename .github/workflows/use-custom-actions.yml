@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Checkout writing-javascript-actions repo
-      - uses: actions/checkout@v1
+        uses: actions/checkout@v1
         with:
           repository: CalinL/writing-javascript-actions
           path: js-actions
@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Checkout write-docker-actions repo
-      - uses: actions/checkout@v1
+        uses: actions/checkout@v1
         with:
           repository: CalinL/write-docker-actions
           path: docker-actions
