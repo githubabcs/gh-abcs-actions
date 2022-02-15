@@ -21,7 +21,7 @@
 ### Example 5: Custom actions
 - File: [github-script.yml](/.github/workflows/github-script.yml)
 - File: [hello-world-composite.yml](/.github/workflows/hello-world-composite.yml)
-- Repo: [githubabcs/hello-world-composite-action](/githubabcs/hello-world-composite-action)
+- Repo: [githubabcs/hello-world-composite-action](https://github.com/githubabcs/hello-world-composite-action)
 
 ### Example 6: Self-hosted runners
 - File: [self-hosted-linux.yml](/.github/workflows/self-hosted-linux.yml)
