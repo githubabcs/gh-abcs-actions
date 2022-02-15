@@ -5,6 +5,11 @@ on:
     types: [labeled]
   workflow_dispatch:
 
+# Limit the permissions of the GITHUB_TOKEN
+permissions:
+  contents: read
+  issues: write
+  
 jobs:
   
   js-custom-actions:
