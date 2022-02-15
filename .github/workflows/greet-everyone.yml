@@ -2,7 +2,13 @@ name: Greet Everyone
 # This workflow is triggered on pushes to the repository.
 on: 
   push:
+  
   workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+
   workflow_dispatch:
     inputs:
       name:
