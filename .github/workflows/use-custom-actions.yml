@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - name: Checkout writing-javascript-actions repo
       - uses: actions/checkout@v1
         with:
           repository: CalinL/writing-javascript-actions
@@ -20,14 +21,14 @@ jobs:
       - run: echo "🎉 Running the JS actions"
 
       - name: hello-action
-        uses: js-actions/.github/actions/hello-world@main
+        uses: js-actions/.github/actions/hello-world
 
       - name: ha-ha
-        uses: js-actions/.github/actions/joke-action@main
+        uses: js-actions/.github/actions/joke-action
         id: jokes
 
       - name: create-issue
-        uses: js-actions/.github/actions/issue-maker@main
+        uses: js-actions/.github/actions/issue-maker
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           joke: ${{steps.jokes.outputs.joke-output}}
@@ -39,17 +40,23 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - name: Checkout write-docker-actions repo
+      - uses: actions/checkout@v1
+        with:
+          repository: CalinL/write-docker-actions
+          path: docker-actions
+
       - run: echo "🎉 Running the Docker actions"
 
       - name: hello-action
-        uses: CalinL/write-docker-actions/.github/actions/hello-world@main
+        uses: docker-actions/.github/actions/hello-world
 
       - name: meow
-        uses: CalinL/write-docker-actions/.github/actions/cat-facts@main
+        uses: docker-actions/.github/actions/cat-facts
         id: cat
 
       - name: create-issue
-        uses: CalinL/write-docker-actions/.github/actions/issue-maker@main
+        uses: docker-actions/.github/actions/issue-maker
         with:
           repoToken: ${{secrets.GITHUB_TOKEN}}
           catFact: ${{steps.cat.outputs.fact}}
