@@ -1,0 +1,53 @@
+name: Use Custom Actions (JS & Doker)
+
+on:
+  pull_request:
+    types: [labeled]
+  workflow_dispatch:
+
+jobs:
+  
+  js-custom-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - run: echo "🎉 Running the JS actions"
+
+      - name: hello-action
+        uses: CalinL/writing-javascript-actions/.github/actions/hello-world
+
+      - name: ha-ha
+        uses: CalinL/writing-javascript-actions/.github/actions/joke-action
+        id: jokes
+
+      - name: create-issue
+        uses: CalinL/writing-javascript-actions/.github/actions/issue-maker
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          joke: ${{steps.jokes.outputs.joke-output}}
+          issue-title: "A joke for you"      
+
+  docker-custom-actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - run: echo "🎉 Running the Docker actions"
+
+      - name: hello-action
+        uses: CalinL/write-docker-actions/.github/actions/hello-world
+
+      - name: meow
+        uses: CalinL/write-docker-actions/.github/actions/cat-facts
+        id: cat
+
+      - name: create-issue
+        uses: CalinL/write-docker-actions/.github/actions/issue-maker
+        with:
+          repoToken: ${{secrets.GITHUB_TOKEN}}
+          catFact: ${{steps.cat.outputs.fact}}
+          issueTitle: "A cat fact for you"
+
+
