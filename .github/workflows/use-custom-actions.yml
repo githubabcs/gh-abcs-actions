@@ -12,17 +12,22 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - uses: actions/checkout@v1
+        with:
+          repository: CalinL/writing-javascript-actions
+          path: js-actions
+
       - run: echo "🎉 Running the JS actions"
 
       - name: hello-action
-        uses: CalinL/writing-javascript-actions/.github/actions/hello-world@main
+        uses: js-actions/.github/actions/hello-world@main
 
       - name: ha-ha
-        uses: CalinL/writing-javascript-actions/.github/actions/joke-action@main
+        uses: js-actions/.github/actions/joke-action@main
         id: jokes
 
       - name: create-issue
-        uses: CalinL/writing-javascript-actions/.github/actions/issue-maker@main
+        uses: js-actions/.github/actions/issue-maker@main
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           joke: ${{steps.jokes.outputs.joke-output}}
