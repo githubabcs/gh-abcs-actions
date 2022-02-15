@@ -20,6 +20,10 @@
 
 ### Example 5: Custom actions
 - File: [github-script.yml](/.github/workflows/github-script.yml)
+- File: [hello-world-composite.yml](/.github/workflows/hello-world-composite.yml)
+- Repo: [githubabcs/hello-world-composite-action](https://github.com/githubabcs/hello-world-composite-action)
+- Repo: [write-docker-actions](https://github.com/CalinL/write-docker-actions)
+- Repo: [write-javascript-actions](https://github.com/CalinL/writing-javascript-actions)
 
 ### Example 6: Self-hosted runners
 - File: [self-hosted-linux.yml](/.github/workflows/self-hosted-linux.yml)
@@ -27,3 +31,8 @@
 ### Example 7: CI/CD
 - File: [ci-workflow.yml](/.github/workflows/ci-workflow.yml)
 - File: [cd-workflow.yml](/.github/workflows/cd-workflow.yml)
+- Repo: [github-actions-for-packages](https://github.com/CalinL/github-actions-for-packages)
+- Repo: [github-actions-for-ci](https://github.com/CalinL/github-actions-for-ci)
+
+### GitHub Learning Labs
+- Learning Path: [DevOps with GitHub Actions](https://lab.github.com/githubtraining/devops-with-github-actions)
