@@ -15,7 +15,7 @@ jobs:
       - run: echo "🎉 Running the JS actions"
 
       - name: hello-action
-        uses: .github/actions/hello-world-js
+        uses: /.github/actions/hello-world-js
 
       - name: ha-ha
         uses: ./.github/actions/joke-action
