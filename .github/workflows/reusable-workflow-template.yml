@@ -4,5 +4,12 @@ on:
   [workflow_dispatch]
 
 jobs:
+  call_greet_everyone:
+    uses: githubabcs/gh-abcs-actions/.github/workflows/greet-everyone.yml@main
+    with:
+      name: 'Reusable Workflow Templates'
+    
   call_reusable_workflow_job:
     uses: githubabcs/gh-abcs-actions/.github/workflows/super-linter.yml@main
+
+  
