@@ -21,6 +21,7 @@
 ### Example 5: Custom actions
 - File: [github-script.yml](/.github/workflows/github-script.yml)
 - File: [hello-world-composite.yml](/.github/workflows/hello-world-composite.yml)
+- File: [use-custom-actions.yml](/.github/workflows/use-custom-actions.yml)
 - Repo: [githubabcs/hello-world-composite-action](https://github.com/githubabcs/hello-world-composite-action)
 - Repo: [write-docker-actions](https://github.com/CalinL/write-docker-actions)
 - Repo: [write-javascript-actions](https://github.com/CalinL/writing-javascript-actions)
