@@ -18,6 +18,11 @@ jobs:
     needs: initial
     steps:
       - run: echo "This job will run after the initial job, in parallel with fanout1."
+  fanout3:
+    runs-on: ubuntu-latest
+    needs: [initial, fanout1]
+    steps:
+      - run: echo "This job will run after the initial job, in parallel with fanout2."
   fanin:
     runs-on: ubuntu-latest
     needs: [fanout1, fanout2]
