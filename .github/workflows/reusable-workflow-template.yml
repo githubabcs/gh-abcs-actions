@@ -12,4 +12,7 @@ jobs:
   call_reusable_workflow_job:
     uses: githubabcs/gh-abcs-actions/.github/workflows/super-linter.yml@main
 
+  call_demo_workflowjob:
+    needs: call_greet_everyone
+    uses: githubabcs/gh-abcs-actions/.github/workflows/github-actions-demo.yml@main
   
