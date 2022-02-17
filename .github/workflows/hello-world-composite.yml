@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: hello-world
-        uses: githubabcs/hello-world-composite-action@3a3a82f4d7900eec67b424c50b23bd25e4fc4f31
+        uses: githubabcs/hello-world-composite-action@v1.0.1
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.hello-world.outputs.random-number }}
