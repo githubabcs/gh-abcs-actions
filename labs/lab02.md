@@ -2,7 +2,11 @@
 In this lab you will update the workflow syntax.
 > Duration: 5-10 minutes
 
-## 2.1 Add a new paralel job with dependencies
+References: 
+- [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
+- [Using jobs in a workflow](https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow)
+
+## 2.1 Add new jobs with dependencies
 
 1. Open the workflow file [job-dependencies.yml](/.github/workflows/job-dependencies.yml)
 2. Edit the file and copy the following YAML content at the end of the file:
@@ -13,7 +17,7 @@ In this lab you will update the workflow syntax.
       - run: echo "This job will be run in parallel with the initial job."
   test:
     runs-on: ubuntu-latest
-    needs: initial
+    needs: build
     steps:
       - run: echo "This job will be run after the build job."
   ring01:
@@ -43,7 +47,8 @@ In this lab you will update the workflow syntax.
       - run: echo "This job will be run after the ring04 job."
 ```
 3. Commit the changes into the `main` branch
-4. Go to `Actions` and see the details of your running workflow
+4. Go to `Actions` and manually trigger the workflow by clicking on `Run Workflow` button
+5. See the details of your running workflow
 
 ## 2.2 Create a matrix build
 
@@ -57,5 +62,13 @@ In this lab you will update the workflow syntax.
     steps:
     - run: echo "This job builds the cofiguration ${{ matrix.configuration }}."
 ```
-2. Commit the changes into the `main` branch
-3. Go to `Actions` and see the details of your running workflow
+2. Update the workflow to run on push events
+```YAML
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+```
+3. Commit the changes into the `main` branch
+4. Go to `Actions` and see the details of your running workflow

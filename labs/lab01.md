@@ -2,6 +2,10 @@
 In this lab you will update and run your first workflow.
 > Duration: 5-10 minutes
 
+References:
+- [Events that trigger workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
+- [Adding an action to your workflow](https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions#adding-an-action-to-your-workflow)
+
 ## 1.1 Update the workflow to trigger when a change is made to the labs folder on main branch
 
 1. Open the workflow file [github-actions-demo.yml](/.github/workflows/github-actions-demo.yml)
