@@ -11,6 +11,8 @@ References:
 
 1. Follow the guide to create a new environment called `UAT`
     - [Creating an environment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#creating-an-environment)
+    - Add a required reviewer for your environment
+    - [Required reviewers](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#required-reviewers)
 2. Follow the guide to create a new repo secret called `MY_REPO_SECRET`
     - [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)
 3. Follow the guide to create a new env secret called `MY_ENV_SECRET`
@@ -79,3 +81,5 @@ on:
 ```
 8. Commit the changes into the `main` branch
 9. Go to `Actions` and see the details of your running workflow
+10. Review your deployment and approve the pending UAT job
+- [Reviewing deployments](https://docs.github.com/en/actions/managing-workflow-runs/reviewing-deployments)
