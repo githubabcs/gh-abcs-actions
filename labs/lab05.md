@@ -1,6 +1,6 @@
 # 5 - Custom actions
 In this lab you will create and use custom actions.
-> Duration: 15-20 minutes
+> Duration: 20-30 minutes
 
 References:
 - [Creating actions](https://docs.github.com/en/actions/creating-actions)
@@ -74,7 +74,19 @@ on:
 9. Go to `Actions` and see the details of your running workflow
 10. Complete the pull request and delete the source branch
 
-## 5.3 Create a JavaScript action (optional)
+## 5.3 Custom JS and Docker actions
+
+1. Study the implementation of the custom action from the folder: `[/.github/actions/](/.github/actions/)`
+2. Open the workflow file [use-custom-actions.yml](/.github/workflows/use-custom-actions.yml)
+3. Edit the file and copy the following YAML content to update the issue title:
+```YAML
+         issue-title: "A joke for you from custom actions workflow" 
+```
+4. Commit the changes into the `main` branch
+5. Go to `Actions` and manually trigger the workflow by clicking on `Run Workflow` button
+6. See the details of your running workflow
+
+## 5.4 Create a JavaScript action (optional)
 1. Follow the guide to create a JavaScript action
     - [Creating a JavaScript action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
 2. Use your action in a workflow
