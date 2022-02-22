@@ -1,4 +1,4 @@
-name: Hello World Composite
+name: 05-2. Hello World Composite
 
 on: 
   [workflow_dispatch]

@@ -1,4 +1,4 @@
-name: GitHub Script - Thank you
+name: 05-1. GitHub Script - Thank you
 on:
   issues: 
     types: [opened, edited, reopened, labeled]

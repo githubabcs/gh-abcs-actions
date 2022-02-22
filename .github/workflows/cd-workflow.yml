@@ -1,4 +1,4 @@
-name: CD Workflow 
+name: 07-2. CD Workflow 
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Dependencies 
+name: 02-2. Dependencies 
 
 on:
   workflow_dispatch:

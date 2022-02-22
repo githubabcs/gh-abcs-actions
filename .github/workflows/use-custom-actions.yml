@@ -1,4 +1,4 @@
-name: Use Custom Actions (JS & Doker)
+name: 05-3. Use Custom Actions (JS & Doker)
 
 on:
   pull_request:

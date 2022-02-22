@@ -1,4 +1,4 @@
-name: Greet Everyone
+name: 01-2. Greet Everyone
 # This workflow is triggered on pushes to the repository.
 on: 
   push:
