@@ -4,15 +4,13 @@ on:
   [workflow_dispatch]
 
 jobs:
-  hello_world_job:
+  hello_world_job1:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job1 to say hello
     steps:
-      - uses: actions/checkout@v2
       - id: hello-world
-        #uses: githubabcs/hello-world-composite-action@main
-        uses: ./.github/actions/hello-world-composite-action
+        uses: githubabcs/hello-world-composite-action@main
         with:
-          who-to-greet: 'Mona the Octocat'
+          who-to-greet: 'Hello from GH ABCs'
       - run: echo random-number ${{ steps.hello-world.outputs.random-number }}
         shell: bash

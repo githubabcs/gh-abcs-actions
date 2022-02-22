@@ -10,7 +10,7 @@ References:
 
 ## 4.1 Create a reusable workflow
 
-1. For a workflow to be reusable, the `on` must include the `workflow_call` evennt
+1. For a workflow to be reusable, the `on` must include the `workflow_call` event
 2. Open the workflow file [job-dependencies.yml](/.github/workflows/job-dependencies.yml)
 3. Edit the file and update the workflow to run on workflow call event
 ```YAML
@@ -35,3 +35,4 @@ on:
 8. Commit the changes into the same `feature/lab04` branch
 9. Open a new pull request
 10. Go to `Actions` and see the details of your running workflow
+11. Complete the pull request and delete the source branch
