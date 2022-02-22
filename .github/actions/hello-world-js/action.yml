@@ -4,4 +4,4 @@ description: "say hello with GitHub Actions"
 
 runs:
   using: "node12"
-  main: "dist/main.js"
+  main: "dist/index.js"
