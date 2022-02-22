@@ -1,39 +1,46 @@
 # gh-abcs-actions
 > The GitHub ABCs actions training with workflow templates, examples and additional learning resources.
 
-## Examples
+## Examples & Hands-on Labs
 
-### Example 1: Introduction to GitHub Actions
-- File: [github-actions-demo.yml](/.github/workflows/github-actions-demo.yml)
-- File: [greet-everyone.yml](/.github/workflows/greet-everyone.yml)
+### Module 1: Introduction to GitHub Actions
+- Example: [github-actions-demo.yml](/.github/workflows/github-actions-demo.yml)
+- Example: [greet-everyone.yml](/.github/workflows/greet-everyone.yml)
+- _Hands-on Lab:_ [Activity 1](/labs/lab01.md)
 
-### Example 2: Syntax
-- File: [simple-workflow.yml](/.github/workflows/simple-workflow.yml)
-- File: [job-dependencies.yml](/.github/workflows/job-dependencies.yml)
+### Module 2: Syntax
+- Example: [simple-workflow.yml](/.github/workflows/simple-workflow.yml)
+- Example: [job-dependencies.yml](/.github/workflows/job-dependencies.yml)
+- _Hands-on Lab:_ [Activity 2](/labs/lab02.md)
 
-### Example 3: Environments and Secrets
-- File: [environments-secrets.yml](/.github/workflows/environments-secrets.yml)
+### Module 3: Environments and Secrets
+- Example: [environments-secrets.yml](/.github/workflows/environments-secrets.yml)
+- _Hands-on Lab:_[Activity 3](/labs/lab03.md)
 
-### Example 4: Workflow Templates
-- File: [reusable-workflow-template.yml](/.github/workflows/reusable-workflow-template.yml)
-- File: [super-linter.yml](/.github/workflows/super-linter.yml)
+### Module 4: Workflow Templates
+- Example: [reusable-workflow-template.yml](/.github/workflows/reusable-workflow-template.yml)
+- Example: [super-linter.yml](/.github/workflows/super-linter.yml)
+- _Hands-on Lab:_ [Activity 4](/labs/lab04.md)
 
-### Example 5: Custom actions
-- File: [github-script.yml](/.github/workflows/github-script.yml)
-- File: [hello-world-composite.yml](/.github/workflows/hello-world-composite.yml)
-- File: [use-custom-actions.yml](/.github/workflows/use-custom-actions.yml)
+### Module 5: Custom actions
+- Example: [github-script.yml](/.github/workflows/github-script.yml)
+- Example: [hello-world-composite.yml](/.github/workflows/hello-world-composite.yml)
+- Example: [use-custom-actions.yml](/.github/workflows/use-custom-actions.yml)
 - Repo: [githubabcs/hello-world-composite-action](https://github.com/githubabcs/hello-world-composite-action)
 - Repo: [write-docker-actions](https://github.com/CalinL/write-docker-actions)
 - Repo: [write-javascript-actions](https://github.com/CalinL/writing-javascript-actions)
+- _Hands-on Lab:_ [Activity 5](/labs/lab05.md)
 
-### Example 6: Self-hosted runners
-- File: [self-hosted-linux.yml](/.github/workflows/self-hosted-linux.yml)
+### Module 6: Self-hosted runners
+- Example: [self-hosted-linux.yml](/.github/workflows/self-hosted-linux.yml)
+- _Hands-on Lab:_ [Activity 6](/labs/lab06.md)
 
-### Example 7: CI/CD
-- File: [ci-workflow.yml](/.github/workflows/ci-workflow.yml)
-- File: [cd-workflow.yml](/.github/workflows/cd-workflow.yml)
+### Module 7: CI/CD
+- Example: [ci-workflow.yml](/.github/workflows/ci-workflow.yml)
+- Example: [cd-workflow.yml](/.github/workflows/cd-workflow.yml)
 - Repo: [github-actions-for-packages](https://github.com/CalinL/github-actions-for-packages)
 - Repo: [github-actions-for-ci](https://github.com/CalinL/github-actions-for-ci)
+- _Hands-on Lab:_ [Activity 7](/labs/lab07.md)
 
 ---
 

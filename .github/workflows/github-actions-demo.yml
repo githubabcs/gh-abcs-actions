@@ -1,6 +1,7 @@
 name: GitHub Actions Demo
 on: 
-  [workflow_dispatch, workflow_call]
+  workflow_dispatch:
+  workflow_call:
 
 jobs:
   Explore-GitHub-Actions:
