@@ -1,4 +1,4 @@
-# 7 - Workflow Templates
+# 7 - CI/CD
 In this lab you will use CI/CD workflows.
 > Duration: 15-20 minutes
 
