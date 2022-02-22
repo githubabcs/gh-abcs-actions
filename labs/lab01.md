@@ -5,7 +5,7 @@ In this lab you will update and run your first workflow.
 ## 1.1 Update the workflow to trigger when a change is made to the labs folder on main branch
 
 1. Open the workflow file [github-actions-demo.yml](/.github/workflows/github-actions-demo.yml)
-2. Copy the following YAML content after line 4:
+2. Edit the file and copy the following YAML content after line 4:
 ```YAML
   push:
     branches:
@@ -13,14 +13,15 @@ In this lab you will update and run your first workflow.
     paths:
       - 'labs/**'
 ```
-3. Change a file inside the folder [labs](/labs)
-4. Commit the changes into the `main` branch
-5. Go to `Actions` and see the details of your running workflow
+3. Commit the workflow changes into the `main` branch
+4. Change a file inside the folder [labs](/labs)
+5. Commit the changes into the `main` branch
+6. Go to `Actions` and see the details of your running workflow
 
 ## 1.2 Add steps to your workflow
 
 1. Open the workflow file [github-actions-demo.yml](/.github/workflows/github-actions-demo.yml)
-2. Copy the following YAML content at the end of the file:
+2. Edit the file and copy the following YAML content at the end of the file:
 ```YAML
         # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
       - name: Hello world

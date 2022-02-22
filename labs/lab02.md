@@ -5,7 +5,7 @@ In this lab you will update the workflow syntax.
 ## 2.1 Add a new paralel job with dependencies
 
 1. Open the workflow file [job-dependencies.yml](/.github/workflows/job-dependencies.yml)
-2. Copy the following YAML content at the end of the file:
+2. Edit the file and copy the following YAML content at the end of the file:
 ```YAML
   build:
     runs-on: windows-latest
