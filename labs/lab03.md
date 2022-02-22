@@ -34,7 +34,8 @@ References:
       - name: Echo secret is redacted in the logs
         run: |
           echo Env secret is ${{ secrets.MY_REPO_SECRET }}
-          echo Warning: GitHub automatically redacts secrets printed to the log, but you should avoid printing secrets to the log intentionally.
+          echo Warning: GitHub automatically redacts secrets printed to the log, 
+          echo          but you should avoid printing secrets to the log intentionally.
           echo ${{ secrets.MY_REPO_SECRET }} | sed 's/./& /g'
 ```
 6. Update the workflow to run on push and pull_request events
@@ -75,11 +76,9 @@ on:
 ```
 7. Change the PROD job to depend on UAT deployment
 ```YAML
-   
     needs: use-environment-uat
-
 ```
 8. Commit the changes into the `main` branch
 9. Go to `Actions` and see the details of your running workflow
 10. Review your deployment and approve the pending UAT job
-- [Reviewing deployments](https://docs.github.com/en/actions/managing-workflow-runs/reviewing-deployments)
+    - [Reviewing deployments](https://docs.github.com/en/actions/managing-workflow-runs/reviewing-deployments)

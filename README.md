@@ -78,7 +78,7 @@
 - [GitHub Actions: Control permissions for GITHUB_TOKEN](https://github.blog/changelog/2021-04-20-github-actions-control-permissions-for-github_token/)
 - [Reduce duplication with action composition](https://github.blog/changelog/2021-08-25-github-actions-reduce-duplication-with-action-composition/)
 - [GitHub Actions: Prevent GitHub Actions from approving pull requests](https://github.blog/changelog/2022-01-14-github-actions-prevent-github-actions-from-approving-pull-requests/)
-- [Share GitHub Actions within your enterprise](https://github.blog/changelog/2022-01-25-github-actions-reusable-workflows-can-be-referenced-locally/)
+- [Share GitHub Actions within your enterprise](https://github.blog/changelog/2022-01-21-share-github-actions-within-your-enterprise/)
 - [Reusable workflows can be referenced locally](https://github.blog/changelog/2022-01-25-github-actions-reusable-workflows-can-be-referenced-locally/)
 
 ### Articles
