@@ -75,6 +75,7 @@
 - [Creating Actions](https://docs.github.com/en/actions/creating-actions)
 - [Security guides](https://docs.github.com/en/actions/security-guides)
 - [GitHub Blog](https://github.blog/)
+- [Adopting GitHub Actions at scale](https://www.youtube.com/playlist?list=PL0lo9MOBetEEk9gIFox8EbCf1Co_4ppIO)
 
 ### Actions Changelog
 - [Changelog](https://github.blog/changelog/label/actions/)
