@@ -22,7 +22,7 @@ References:
 ### Hands-on Labs & Activities:
 - [x] Hands-on Labs Setup
 - [x] Module 1: Introduction to GitHub Actions
-- [ ] Module 2: Syntax
+- [x] Module 2: Syntax
 - [ ] Module 3: Environments and Secrets
 - [ ] Module 4: Workflow Templates
 - [ ] Module 5: Custom actions
