@@ -18,21 +18,23 @@ on:
   workflow_call:
 ```
 4. Commit the changes into a new `feature/lab04` branch
-5. Open the workflow file [reusable-workflow-template.yml](/.github/workflows/reusable-workflow-template.yml)
-6. Edit the file and copy the following YAML content at the end of the file:
+5. Go to `Code` and select the `feature/lab04` from the branches drop down list
+6. Open the workflow file [reusable-workflow-template.yml](/.github/workflows/reusable-workflow-template.yml)
+7. Edit the file and copy the following YAML content at the end of the file:
 ```YAML
   call_dependencies_workflow_job:
     needs: call_reusable_workflow_job
-    uses: githubabcs/gh-abcs-actions/.github/workflows/job-dependencies.yml@main
+    uses: <YOUR_USER_ACCOUNT>/gh-abcs-actions/.github/workflows/job-dependencies.yml@main
 ```
-7. Update the workflow to run on pull_request events
+8. Update the workflow to run on push events
 ```YAML
 on:
-  pull_request:
+  push:
      branches: [main]
   workflow_dispatch:    
 ```
-8. Commit the changes into the same `feature/lab04` branch
-9. Open a new pull request
-10. Go to `Actions` and see the details of your running workflow
+9. Commit the changes into the same `feature/lab04` branch
+10. Open a new pull request from `Pull requests`
+> Make sure it is your repo pull request and not proposed changes to the upstream repo. From the drop down list choose the base repository to be yours.
 11. Complete the pull request and delete the source branch
+12. Go to `Actions` and see the details of your running workflow

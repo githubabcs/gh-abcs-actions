@@ -27,6 +27,7 @@ References:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     steps:
       - name: Hello world action with secrets
+        uses: actions/hello-world-javascript-action@v1
         with: # Set the secret as an input
           super_secret: ${{ secrets.MY_REPO_SECRET }}
         env: # Or as an environment variable
@@ -82,3 +83,4 @@ on:
 9. Go to `Actions` and see the details of your running workflow
 10. Review your deployment and approve the pending UAT job
     - [Reviewing deployments](https://docs.github.com/en/actions/managing-workflow-runs/reviewing-deployments)
+11. Go to `Settings` > `Environments` and update the `PROD` environment created to protect it with approvals (same as UAT)
