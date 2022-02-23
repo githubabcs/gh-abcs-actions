@@ -23,7 +23,7 @@ References:
 - [x] Hands-on Labs Setup
 - [x] Module 1: Introduction to GitHub Actions
 - [x] Module 2: Syntax
-- [ ] Module 3: Environments and Secrets
+- [x] Module 3: Environments and Secrets
 - [ ] Module 4: Workflow Templates
 - [ ] Module 5: Custom actions
 - [ ] Module 6: Self-hosted runners
