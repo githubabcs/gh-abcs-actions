@@ -1,8 +1,8 @@
 name: 07-2. CD Workflow 
 
 on:
-  push:
-    branches: [main]
+  # push:
+  #   branches: [main]
   workflow_dispatch:
 
 # We only want to allow one deploy-to-prod workflow running at any point in time

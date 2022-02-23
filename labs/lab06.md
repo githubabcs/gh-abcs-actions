@@ -1,6 +1,6 @@
 # 6 - Self-hosted runners
 In this lab you will create and use your self-hosted runners.
-> Duration: 15-20 minutes
+> Duration: 10-15 minutes
 
 References:
 - [Adding self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners)

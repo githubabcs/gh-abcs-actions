@@ -1,6 +1,6 @@
 # 3 - Environments and Secrets
 In this lab you will use environments and secrets.
-> Duration: 15-20 minutes
+> Duration: 10-15 minutes
 
 References:
 - [Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
@@ -72,7 +72,7 @@ on:
       - name: Step that uses the UAT environment
         run: echo "Deployment to UAT..."
         env: 
-          en_secret: ${{ secrets.MY_ENV_SECRET }}
+          env_secret: ${{ secrets.MY_ENV_SECRET }}
 
 ```
 7. Change the PROD job to depend on UAT deployment

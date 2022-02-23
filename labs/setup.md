@@ -9,8 +9,8 @@ References:
 ## Fork the current repository and enable GitHub Actions
 
 1. Fork the current repo [gh-abcs-actions](https://github.com/githubabcs/gh-abcs-actions)
-
-2.  Go to `Actions` and see the warning message
+2. Optional, copy or clone the repo by importing the repository into your account.
+3. Go to `Actions` and see the warning message
     > Workflows aren’t being run on this forked repository
-3. Review the workflows and click on the button _`I understand my workflows, go ahead and enable them`_
-4. You should now be able to see the list of all workflows 
+4. Review the workflows and click on the button _`I understand my workflows, go ahead and enable them`_
+5. You should now be able to see the list of all workflows 
