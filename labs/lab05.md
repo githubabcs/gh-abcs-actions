@@ -76,7 +76,7 @@ on:
 
 ## 5.3 Custom JS and Docker actions
 
-1. Study the implementation of the custom action from the folder: `[/.github/actions/](/.github/actions/)`
+1. Study the implementation of the custom action from the folder: [/.github/actions/](/.github/actions/)
 2. Open the workflow file [use-custom-actions.yml](/.github/workflows/use-custom-actions.yml)
 3. Edit the file and copy the following YAML content to update the issue title:
 ```YAML

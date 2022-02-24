@@ -26,7 +26,7 @@ References:
 ```YAML
       - shell: bash
         run: |
-          expr 1 + 1 > output.log
+          echo 'Test upload artifact' > output.log
       - name: Upload output file
         uses: actions/upload-artifact@v2
         with:
@@ -44,16 +44,18 @@ References:
 6. Open a new pull request from `Pull requests`
 > Make sure it is your repo pull request and not proposed changes to the upstream repo. From the drop down list choose the base repository to be yours.
 7. Once PR opened, go to `Actions` and see the details of your running workflow
+8. Once all checks have passed, click on the button `Merge pull request` to complete the PR
+9. Go to `Actions` and see the details of your running workflow
 
 ## 7.2 Update the CD workflow
 
 1. Open the workflow file [cd-workflow.yml](/.github/workflows/cd-workflow.yml)
 2. Edit the file and copy the following YAML content before the `Deploy to production` step:
 ```YAML
-      - name: Download a single artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: output-log-file
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v2
+      with:
+        name: node-app
 ```
 3. Update the workflow to run on push events
 ```YAML
