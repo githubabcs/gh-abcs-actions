@@ -1,6 +1,6 @@
 # 5 - Custom actions
 In this lab you will create and use custom actions.
-> Duration: 20-30 minutes
+> Duration: 15-20 minutes
 
 References:
 - [Creating actions](https://docs.github.com/en/actions/creating-actions)
@@ -86,7 +86,7 @@ on:
 5. Go to `Actions` and manually trigger the workflow by clicking on `Run Workflow` button
 6. See the details of your running workflow
 
-## 5.4 Create a JavaScript action (optional)
+## 5.4 (Optional) Create a JavaScript action
 1. Follow the guide to create a JavaScript action
     - [Creating a JavaScript action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
 2. Use your action in a workflow

@@ -6,7 +6,7 @@ References:
 - [Adding self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/adding-self-hosted-runners)
 - [Using self-hosted runners in a workflow](https://docs.github.com/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow)
 
-## 6.1 Add a self-hosted runner (optional)
+## (Optional) 6.1 Add a self-hosted runner
 > Prerequisites: Access to a Cloud platform to create a runner machine
 
 1. If you have access to an Azure subscription, follow the guide to create a Linux virtual machine
