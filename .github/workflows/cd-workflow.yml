@@ -21,13 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
  
+      # Add here the download-artifact step
+
+
       - name: Deploy to production
         if: ${{ success() }}
         run: echo "Specific deploy steps..."
-
-      - name: Upload artifact
-        if: ${{ success() && false }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-node-artifact
-          path: dist/
+      
