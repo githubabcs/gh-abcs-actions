@@ -18,6 +18,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Build
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -42,7 +43,7 @@ jobs:
   
   # Running jobs in a container - Use a container to run the steps in a job.
   container:
-    name: Say Hello from Container
+    name: Container
     runs-on: ubuntu-latest
     container:
       image: node:14.15.0-alpine3.12
@@ -59,7 +60,3 @@ jobs:
         with:
           entrypoint: /bin/cat
           args: /etc/os-release
-
-      - name: Run node.js version
-        run: |
-          node -v
