@@ -55,10 +55,10 @@
 ## Additional Resources
 > Additional resources to continue your GitHub Actions learning journey.
 
-### Training Manual 
+### Training Manual
 - [GitHub Actions Training Manual](https://githubtraining.github.io/actions-facilitator-guide/#/)
 
-### GitHub Learning Labs
+### Learning Labs
 - [Learning Lab](https://lab.github.com/)
 - [DevOps with GitHub Actions](https://lab.github.com/githubtraining/devops-with-github-actions)
 - [GitHub Actions: Continuous Delivery with Azure](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)
