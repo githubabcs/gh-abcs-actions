@@ -1,6 +1,6 @@
 # 1 - Introduction to GitHub Actions
 In this lab you will update and run your first workflow.
-> Duration: 5-15 minutes
+> Duration: 5-20 minutes
 
 References:
 - [Events that trigger workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
