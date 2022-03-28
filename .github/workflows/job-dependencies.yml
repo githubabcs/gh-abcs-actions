@@ -32,7 +32,7 @@ jobs:
     steps:
       - run: echo "This job will run after fanout1 and fanout2 have finished."
       
-      build:
+  build:
     runs-on: windows-latest
     steps:
       - run: echo "This job will be run in parallel with the initial job."
