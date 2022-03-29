@@ -1,6 +1,6 @@
 # 5 - Custom actions
 In this lab you will create and use custom actions.
-> Duration: 15-20 minutes
+> Duration: 15-25 minutes
 
 References:
 - [Creating actions](https://docs.github.com/en/actions/creating-actions)
