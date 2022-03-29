@@ -22,7 +22,13 @@ on:
         description: 'comment'
         required: false
         default: 'approved'
- 
+
+# Limit the permissions of the GITHUB_TOKEN
+permissions:
+  contents: read
+  deployments: read
+  actions: write
+  
 jobs:
   review_pending_deployments:
     name:  ${{github.event.inputs.state}} pending deployments
@@ -51,7 +57,8 @@ jobs:
       - name: ${{github.event.inputs.state}}
         uses: actions/github-script@v6
         with:
-          github-token: ${{steps.get_workflow_token.outputs.token}}
+          #github-token: ${{steps.get_workflow_token.outputs.token}}
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             github.rest.actions.reviewPendingDeploymentsForRun({
               owner: context.repo.owner,
