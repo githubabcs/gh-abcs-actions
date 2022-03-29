@@ -18,4 +18,4 @@ jobs:
     
   call_dependencies_workflow_job:
     needs: call_reusable_workflow_job
-    uses: <YOUR_USER_ACCOUNT>/gh-abcs-actions/.github/workflows/job-dependencies.yml@main
+    uses: flrac/gh-abcs-actions/.github/workflows/job-dependencies.yml@main
