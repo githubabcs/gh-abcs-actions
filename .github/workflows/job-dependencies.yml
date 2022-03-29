@@ -3,7 +3,6 @@ name: 02-2. Dependencies
 on:
   workflow_call:
   workflow_dispatch:
-  workflow_call:
   push:
     branches:
       - main
