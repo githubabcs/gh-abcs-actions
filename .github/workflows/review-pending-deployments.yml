@@ -1,0 +1,48 @@
+name: 03-2. Review Pending Deployments
+on: 
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'run_id'
+        required: true
+        default: ''
+      environment_ids:
+        description: 'environment_ids'
+        required: true
+        default: ''
+      state:
+        description: 'state'
+        required: true
+        default: 'approved' 
+        type: choice
+        options:
+        - approved
+        - rejected
+ 
+jobs:
+  review_pending_deployments:
+    name:  ${{github.event.inputs.state}} pending deployments
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Token
+        id: get_workflow_token
+        uses: peter-murray/workflow-application-token-action@v1
+        with:
+          application_id: ${{ secrets.GH_ABCS_APP_ACTIONS_APP_ID }}
+          application_private_key: "${{ secrets.GH_ABCS_APP_ACTIONS_APP_PRIVATE_KEY }}"
+          permissions: "actions:write"
+
+      - name: ${{github.event.inputs.state}}
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{steps.get_workflow_token.outputs.token}}
+          script: |
+            github.rest.actions.reviewPendingDeploymentsForRun({
+              owner: context.repo.owner,
+              repo: 'gh-abcs-actions',
+              run_id: ${{github.event.inputs.run_id}},
+              environment_ids: [
+                ${{github.event.inputs.environment_ids}}
+              ],
+              state: '${{github.event.inputs.state}}'
+            })
