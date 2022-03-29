@@ -40,7 +40,6 @@ jobs:
         uses: actions/github-script@v6
         with:
           github-token: ${{steps.get_workflow_token.outputs.token}}
-          result-encoding: string
           script: |
             const result = await github.rest.actions.getPendingDeploymentsForRun({
               owner: context.repo.owner,
