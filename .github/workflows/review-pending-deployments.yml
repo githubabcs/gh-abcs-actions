@@ -36,6 +36,17 @@ jobs:
           application_private_key: "${{ secrets.GH_ABCS_APP_ACTIONS_APP_PRIVATE_KEY }}"
           permissions: "actions:write"
 
+      - name: Get pending deployments
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{steps.get_workflow_token.outputs.token}}
+          script: |
+            github.rest.actions.getPendingDeploymentsForRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: ${{github.event.inputs.run_id}}
+            })
+
       - name: ${{github.event.inputs.state}}
         uses: actions/github-script@v6
         with:
