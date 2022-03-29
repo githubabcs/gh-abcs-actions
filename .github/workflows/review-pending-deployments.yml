@@ -34,7 +34,7 @@ jobs:
         with:
           application_id: ${{ secrets.GH_ABCS_APP_ACTIONS_APP_ID }}
           application_private_key: "${{ secrets.GH_ABCS_APP_ACTIONS_APP_PRIVATE_KEY }}"
-          permissions: "actions:write"
+          permissions: "actions:write,contents:read"
 
       - name: Get pending deployments
         uses: actions/github-script@v6
