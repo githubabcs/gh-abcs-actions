@@ -54,7 +54,7 @@ jobs:
           github-token: ${{steps.get_workflow_token.outputs.token}}
           script: |
             github.rest.actions.reviewPendingDeploymentsForRun({
-              owner: 'CalinL',
+              owner: context.repo.owner,
               repo: context.repo.repo,
               run_id: ${{github.event.inputs.run_id}},
               environment_ids: [
