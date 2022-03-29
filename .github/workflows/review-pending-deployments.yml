@@ -46,7 +46,7 @@ jobs:
               repo: context.repo.repo,
               run_id: ${{github.event.inputs.run_id}}
             })
-            console.log(result)
+            console.log(result.data.environment)
       
       - name: ${{github.event.inputs.state}}
         uses: actions/github-script@v6
