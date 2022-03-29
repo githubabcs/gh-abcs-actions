@@ -18,6 +18,10 @@ on:
         options:
         - approved
         - rejected
+      comment:
+        description: 'comment'
+        required: false
+        default: 'approved'
  
 jobs:
   review_pending_deployments:
@@ -44,5 +48,6 @@ jobs:
               environment_ids: [
                 ${{github.event.inputs.environment_ids}}
               ],
-              state: '${{github.event.inputs.state}}'
+              state: '${{github.event.inputs.state}}',
+              comment: '${{github.event.inputs.comment}}'
             })
