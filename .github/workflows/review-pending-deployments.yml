@@ -38,14 +38,18 @@ jobs:
 
       - name: Get pending deployments
         uses: actions/github-script@v6
+        id: get-pending
         with:
           github-token: ${{steps.get_workflow_token.outputs.token}}
+          result-encoding: string
           script: |
             github.rest.actions.getPendingDeploymentsForRun({
               owner: context.repo.owner,
               repo: context.repo.repo,
               run_id: ${{github.event.inputs.run_id}}
             })
+      - name: Get result
+        run: echo "${{steps.get-pending.outputs.result}}"
 
       - name: ${{github.event.inputs.state}}
         uses: actions/github-script@v6
