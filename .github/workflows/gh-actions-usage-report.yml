@@ -36,19 +36,6 @@ jobs:
             })
             console.log(result.data)
 
-            const owner = 'githubabcs'
-            const workflows = []
-            const actions = []
-
-            result.data.map(
-              item => { const { name, path, repository: {name: r}, sha } = item
-              workflows.push({owner, repo: r, name, path, sha})
-            })
-
-            console.log(workflows)
-
-            
-            
       # - uses: ActionsDesk/report-action-usage@v2.5.1
       #   id: action-usage-report
       #   with:
