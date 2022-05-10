@@ -75,6 +75,7 @@
 - [Creating Actions](https://docs.github.com/en/actions/creating-actions)
 - [Security guides](https://docs.github.com/en/actions/security-guides)
 - [GitHub Blog](https://github.blog/)
+- [Awesome Actions](https://github.com/sdras/awesome-actions)
 
 ### Adopting GitHub Actions at scale
 - [Autoscaling with self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners)
