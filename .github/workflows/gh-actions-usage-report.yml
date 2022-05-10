@@ -18,10 +18,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
 
+      - name: Get Token
+        id: get_workflow_token
+        uses: peter-murray/workflow-application-token-action@v1
+        with:
+          application_id: ${{ secrets.GH_ABCS_APP_ACTIONS_APP_ID }}
+          application_private_key: "${{ secrets.GH_ABCS_APP_ACTIONS_APP_PRIVATE_KEY }}"
+          #permissions: "actions:write,contents:read,deployments:read"
+
       - uses: ActionsDesk/report-action-usage@v2.5.1
         id: action-usage-report
         with:
-          token: ${{ secrets.ORG_ADMIN_PAT_TOKEN }}
+          token: ${{steps.get_workflow_token.outputs.token}} #${{ secrets.ORG_ADMIN_PAT_TOKEN }}
           owner: githubabcs
 
       - run: |
