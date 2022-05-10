@@ -25,7 +25,16 @@ jobs:
           application_id: ${{ secrets.GH_ABCS_APP_ACTIONS_APP_ID }}
           application_private_key: "${{ secrets.GH_ABCS_APP_ACTIONS_APP_PRIVATE_KEY }}"
           organization: githubabcs
-          #permissions: "actions:write,contents:read,deployments:read"
+
+      - name: Search code
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{steps.get_workflow_token.outputs.token}}
+          script: |
+            const result = await github.rest.search.code({
+              q: 'user:githubabcs'
+            })
+            console.log(result)
 
       - uses: ActionsDesk/report-action-usage@v2.5.1
         id: action-usage-report
