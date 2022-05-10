@@ -32,9 +32,9 @@ jobs:
           github-token: ${{steps.get_workflow_token.outputs.token}}
           script: |
             const result = await github.rest.search.code({
-              q: 'user:githubabcs'
+              q: 'uses in:file path:.github/workflows extension:yml language:yaml user:githubabcs'
             })
-            console.log(result)
+            console.log(result.data)
 
       - uses: ActionsDesk/report-action-usage@v2.5.1
         id: action-usage-report
@@ -43,5 +43,6 @@ jobs:
           owner: githubabcs
 
       - run: |
+          echo "${{ steps.action-uses.outputs.json_result }}"
           echo "${{ steps.action-usage-report.outputs.csv_result }}"
           echo "${{ steps.action-usage-report.outputs.md_result }}"
