@@ -36,8 +36,6 @@ jobs:
             })
             console.log(result.data);
 
-            echo 'TODO'
-
             const owner = 'githubabcs';
             const workflows = [];
 
