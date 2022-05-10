@@ -26,23 +26,36 @@ jobs:
           application_private_key: "${{ secrets.GH_ABCS_APP_ACTIONS_APP_PRIVATE_KEY }}"
           organization: githubabcs
 
-      - name: Search code
+      - name: Search github/workflows (.yml)
         uses: actions/github-script@v6
         with:
           github-token: ${{steps.get_workflow_token.outputs.token}}
           script: |
+            const owner = 'githubabcs'
+
             const result = await github.rest.search.code({
-              q: 'uses in:file path:.github/workflows extension:yml language:yaml user:githubabcs'
+              q: 'uses in:file path:.github/workflows extension:yml language:yaml user:' + owner
             })
             console.log(result.data)
 
-      - uses: ActionsDesk/report-action-usage@v2.5.1
-        id: action-usage-report
-        with:
-          token: ${{steps.get_workflow_token.outputs.token}} #${{ secrets.ORG_ADMIN_PAT_TOKEN }}
-          owner: githubabcs
+            echo 'TODO'
 
-      - run: |
-          echo "${{ steps.action-usage-report.outputs.json_result }}"
-          echo "${{ steps.action-usage-report.outputs.csv_result }}"
-          echo "${{ steps.action-usage-report.outputs.md_result }}"
+            const workflows = []
+
+            data.map(item => { const { name, path, repository: {name: r}, sha } = item
+                     workflows.push({owner, repo: r, name, path, sha})
+            })
+
+            console.log(workflows)
+
+            
+      # - uses: ActionsDesk/report-action-usage@v2.5.1
+      #   id: action-usage-report
+      #   with:
+      #     token: ${{steps.get_workflow_token.outputs.token}} #${{ secrets.ORG_ADMIN_PAT_TOKEN }}
+      #     owner: githubabcs
+
+      # - run: |
+      #     echo "${{ steps.action-usage-report.outputs.json_result }}"
+      #     echo "${{ steps.action-usage-report.outputs.csv_result }}"
+      #     echo "${{ steps.action-usage-report.outputs.md_result }}"
