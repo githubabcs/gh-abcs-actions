@@ -34,18 +34,20 @@ jobs:
             const result = await github.rest.search.code({
               q: 'uses in:file path:.github/workflows extension:yml language:yaml user:githubabcs'
             })
-            console.log(result.data);
+            console.log(result.data)
 
-            const owner = 'githubabcs';
-            const workflows = [];
+            const owner = 'githubabcs'
+            const workflows = []
+            const actions = []
 
-            data.map(
+            result.data.map(
               item => { const { name, path, repository: {name: r}, sha } = item
               workflows.push({owner, repo: r, name, path, sha})
-            });
+            })
 
-            console.log(workflows);
+            console.log(workflows)
 
+            
             
       # - uses: ActionsDesk/report-action-usage@v2.5.1
       #   id: action-usage-report
