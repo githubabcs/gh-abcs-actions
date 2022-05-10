@@ -24,6 +24,7 @@ jobs:
         with:
           application_id: ${{ secrets.GH_ABCS_APP_ACTIONS_APP_ID }}
           application_private_key: "${{ secrets.GH_ABCS_APP_ACTIONS_APP_PRIVATE_KEY }}"
+          organization: githubabcs
           #permissions: "actions:write,contents:read,deployments:read"
 
       - uses: ActionsDesk/report-action-usage@v2.5.1
