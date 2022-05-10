@@ -22,10 +22,7 @@ jobs:
         id: action-usage-report
         with:
           token: ${{ secrets.ORG_ADMIN_PAT_TOKEN }}
-          owner: CalinL
-          #csv: reports/actions-used-report.csv
-          #md: reports/actions-used-report.md
-          #push_results_to_repo: false
+          owner: githubabcs
 
       - run: |
           echo "${{ steps.action-usage-report.outputs.csv_result }}"
