@@ -1,0 +1,32 @@
+name: 00. GitHub Actions Usage Report
+
+on:
+  workflow_dispatch:
+  schedule:
+    #        ┌─────────────── minute
+    #        │ ┌──────────── hour
+    #        │ │ ┌────────── day (month)
+    #        │ │ │ ┌──────── month
+    #        │ │ │ │ ┌────── day (week)
+    - cron: '0 1 * * *'
+    
+jobs:
+  organization:
+    name: Organization Actions Usage Report
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2.4.0
+
+      - uses: ActionsDesk/report-action-usage@v2.5.1
+        id: action-usage-report
+        with:
+          token: ${{ secrets.ORG_ADMIN_PAT_TOKEN }}
+          owner: githubabcs
+          #csv: reports/actions-used-report.csv
+          #md: reports/actions-used-report.md
+          #push_results_to_repo: false
+
+      - run: |
+          echo "${{ steps.action-usage-report.outputs.csv_result }}"
+          echo "${{ steps.action-usage-report.outputs.md_result }}"
