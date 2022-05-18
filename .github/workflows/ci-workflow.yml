@@ -28,7 +28,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Configure our node environment according to matrix
       - name: Setup node ${{ matrix.node-version }} on ${{ matrix.os }}
@@ -55,7 +55,7 @@ jobs:
       url: https://test.company.com
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Add here the download-artifact step
       
