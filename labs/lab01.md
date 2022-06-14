@@ -18,7 +18,7 @@ References:
       - 'labs/**'
 ```
 3. Commit the workflow changes into the `main` branch
-4. Change a file inside the folder [labs](/labs)
+4. Change a file inside the folder [labs](/labs) for instance [labs/lab01.md](/labs/lab01.md)
 5. Commit the changes into the `main` branch
 6. Go to `Actions` and see the details of your running workflow
 
