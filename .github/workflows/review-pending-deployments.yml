@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: Get Token
         id: get_workflow_token
-        uses: peter-murray/workflow-application-token-action@v1
+        uses: peter-murray/workflow-application-token-action@v2
         with:
           application_id: ${{ secrets.GH_ABCS_APP_ACTIONS_APP_ID }}
           application_private_key: "${{ secrets.GH_ABCS_APP_ACTIONS_APP_PRIVATE_KEY }}"
