@@ -86,6 +86,8 @@
 
 ### Actions Changelog
 - [Changelog](https://github.blog/changelog/label/actions/)
+- [GitHub Actions: Improvements to reusable workflows](https://github.blog/changelog/2022-08-22-github-actions-improvements-to-reusable-workflows-2/)
+- [GitHub Actions: Enhance your actions with job summaries](https://github.blog/changelog/2022-05-09-github-actions-enhance-your-actions-with-job-summaries/)
 - [Reusable workflows can be referenced locally](https://github.blog/changelog/2022-01-25-github-actions-reusable-workflows-can-be-referenced-locally/)
 - [Share GitHub Actions within your enterprise](https://github.blog/changelog/2022-01-21-share-github-actions-within-your-enterprise/)
 - [GitHub Actions: Prevent GitHub Actions from approving pull requests](https://github.blog/changelog/2022-01-14-github-actions-prevent-github-actions-from-approving-pull-requests/)
@@ -96,3 +98,4 @@
 - [GitHub Actions & Security: Best practices](https://devopsjournal.io/blog/2021/02/06/GitHub-Actions)
 - [Setup an internal GitHub Actions Marketplace](https://devopsjournal.io/blog/2021/10/14/GitHub-Actions-Internal-Marketplace)
 - [How to build a CI/CD pipeline with GitHub Actions in four simple steps](https://github.blog/2022-02-02-build-ci-cd-pipeline-github-actions-four-steps/)
+- [Supercharging GitHub Actions with Job Summaries](https://github.blog/2022-05-09-supercharging-github-actions-with-job-summaries/)

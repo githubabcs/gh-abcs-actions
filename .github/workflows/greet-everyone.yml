@@ -33,6 +33,6 @@ jobs:
       - name: Echo the greeting's time
         run: echo 'The time was ${{ steps.hello.outputs.time }}.'
 
-  # Not possible to do nested templates
-  # call_reusable_workflow_job:
-  #   uses: githubabcs/gh-abcs-actions/.github/workflows/simple-workflow.yml@main
+  # You can now nest up to 4 levels of reusable workflows giving you greater flexibility and better code reuse.
+  call_reusable_workflow_job:
+    uses: githubabcs/gh-abcs-actions/.github/workflows/simple-workflow.yml@main
