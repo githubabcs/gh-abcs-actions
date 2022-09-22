@@ -47,8 +47,9 @@
 
 ---
 
-## GitHub Learning Labs
-- [ ] Learning Path: [DevOps with GitHub Actions](https://lab.github.com/githubtraining/devops-with-github-actions)
+## Learning Path
+- [Automate your workflow with GitHub Actions](https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/)
+- [Manage GitHub Actions in the enterprise](https://learn.microsoft.com/en-us/training/modules/manage-github-actions-enterprise/)
 
 ---
 
@@ -75,8 +76,6 @@
 - [Security guides](https://docs.github.com/en/actions/security-guides)
 - [GitHub Blog](https://github.blog/)
 - [Awesome Actions](https://github.com/sdras/awesome-actions)
-- [Automate your workflow with GitHub Actions](https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/)
-- [Manage GitHub Actions in the enterprise](https://learn.microsoft.com/en-us/training/modules/manage-github-actions-enterprise/)
 
 ### Adopting GitHub Actions at scale
 - [Autoscaling with self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners)
@@ -99,3 +98,5 @@
 - [Setup an internal GitHub Actions Marketplace](https://devopsjournal.io/blog/2021/10/14/GitHub-Actions-Internal-Marketplace)
 - [How to build a CI/CD pipeline with GitHub Actions in four simple steps](https://github.blog/2022-02-02-build-ci-cd-pipeline-github-actions-four-steps/)
 - [Supercharging GitHub Actions with Job Summaries](https://github.blog/2022-05-09-supercharging-github-actions-with-job-summaries/)
+- [Keeping your actions up to date with Dependabot](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot)
+- [GitHub Actions for security and compliance](https://github.blog/2021-10-22-github-actions-for-security-compliance/)
