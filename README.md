@@ -58,11 +58,10 @@
 ### Training Manual
 - [GitHub Actions Training Manual](https://githubtraining.github.io/actions-facilitator-guide/#/)
 
-### Learning Labs
-- [Learning Lab](https://lab.github.com/)
-- [DevOps with GitHub Actions](https://lab.github.com/githubtraining/devops-with-github-actions)
-- [GitHub Actions: Continuous Delivery with Azure](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)
-- [Publish to GitHub Packages](https://lab.github.com/githubtraining/github-actions:-publish-to-github-packages)
+### GitHub Skills
+- [GitHub Skills](https://github.com/skills)
+- [GitHub Actions: Continuous Delivery with Azure](https://github.com/skills/continuous-delivery-azure)
+- [Publish to GitHub Packages](https://github.com/skills/publish-packages)
 
 ### GitHub Actions Documentation
 - [GitHub Actions](https://docs.github.com/en/actions)
@@ -76,6 +75,8 @@
 - [Security guides](https://docs.github.com/en/actions/security-guides)
 - [GitHub Blog](https://github.blog/)
 - [Awesome Actions](https://github.com/sdras/awesome-actions)
+- [Automate your workflow with GitHub Actions](https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/)
+- [Manage GitHub Actions in the enterprise](https://learn.microsoft.com/en-us/training/modules/manage-github-actions-enterprise/)
 
 ### Adopting GitHub Actions at scale
 - [Autoscaling with self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners)
@@ -92,7 +93,6 @@
 - [GitHub Actions: Control permissions for GITHUB_TOKEN](https://github.blog/changelog/2021-04-20-github-actions-control-permissions-for-github_token/)
 
 ### Articles
-- [How to use GitHub Actions with security in mind](https://githubuniverse.com/content-library/how-to-use-github-actions-with-security-in-mind/)
 - [GitHub Actions & Security: Best practices](https://devopsjournal.io/blog/2021/02/06/GitHub-Actions)
 - [Setup an internal GitHub Actions Marketplace](https://devopsjournal.io/blog/2021/10/14/GitHub-Actions-Internal-Marketplace)
 - [How to build a CI/CD pipeline with GitHub Actions in four simple steps](https://github.blog/2022-02-02-build-ci-cd-pipeline-github-actions-four-steps/)
