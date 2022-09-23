@@ -29,7 +29,7 @@ References:
       - name: Hello world action with secrets
         uses: actions/hello-world-javascript-action@v1
         with: # Set the secret as an input
-          super_secret: ${{ secrets.MY_REPO_SECRET }}
+          who-to-greet: ${{ secrets.MY_REPO_SECRET }}
         env: # Or as an environment variable
           super_secret: ${{ secrets.MY_REPO_SECRET }}
       - name: Echo secret is redacted in the logs
