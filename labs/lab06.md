@@ -10,7 +10,7 @@ References:
 > Prerequisites: Access to a Cloud platform to create a runner machine
 
 1. If you have access to an Azure subscription, follow the guide to create a Linux virtual machine
-    - [Create a Linux virtual machine](https://docs.microsoft.com/en-us/learn/modules/host-build-agent/4-create-build-agent) 
+    - [Create a Linux virtual machine](https://docs.microsoft.com/en-us/learn/modules/host-build-agent/4-create-build-agent)
 2. Create a new private repository `my-private-repo`
     - [Creating a new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
 3. Follow the guide to install the agent on the runner
