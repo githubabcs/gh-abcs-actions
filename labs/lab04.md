@@ -35,6 +35,6 @@ on:
 ```
 9. Commit the changes into the same `feature/lab04` branch
 10. Open a new pull request from `Pull requests`
-> Make sure it is your repo pull request and not proposed changes to the upstream repo. From the drop down list choose the base repository to be yours.
+> Make sure it is your repository pull request and not proposed changes to the upstream repository. From the drop down list choose the base repository to be yours.
 11. Complete the pull request and delete the source branch
 12. Go to `Actions` and see the details of your running workflow

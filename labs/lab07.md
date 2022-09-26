@@ -42,7 +42,7 @@ References:
 ```
 5. Commit the changes into a new `feature/lab07` branch
 6. Open a new pull request from `Pull requests`
-> Make sure it is your repo pull request and not proposed changes to the upstream repo. From the drop down list choose the base repository to be yours.
+> Make sure it is your repository pull request and not proposed changes to the upstream repository. From the drop down list choose the base repository to be yours.
 7. Once PR opened, go to `Actions` and see the details of your running workflow
 8. Once all checks have passed, click on the button `Merge pull request` to complete the PR
 9. Go to `Actions` and see the details of your running workflow

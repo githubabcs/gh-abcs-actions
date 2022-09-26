@@ -5,7 +5,7 @@ In this lab you will use environments and secrets.
 References:
 - [Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)
 - [Encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
-    - [Accessing your secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#accessing-your-secrets)
+- [Accessing your secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#accessing-your-secrets)
 
 ## 3.1 Create new encrypted secrets
 
@@ -13,7 +13,7 @@ References:
     - [Creating an environment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#creating-an-environment)
     - Add a required reviewer for your environment
     - [Required reviewers](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#required-reviewers)
-2. Follow the guide to create a new repo secret called `MY_REPO_SECRET`
+2. Follow the guide to create a new repository secret called `MY_REPO_SECRET`
     - [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)
 3. Follow the guide to create a new env secret called `MY_ENV_SECRET`
     - [Creating encrypted secrets for an environment](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment)
