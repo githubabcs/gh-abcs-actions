@@ -1,5 +1,10 @@
 name: 01-1. GitHub Actions Demo
 on: 
+  push:
+    branches:
+     - main
+    paths:
+     - 'labs/**'
   workflow_dispatch:
   workflow_call:
 
