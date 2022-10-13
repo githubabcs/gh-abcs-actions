@@ -5,6 +5,7 @@ on:
      - main
     paths:
      - 'labs/**'
+  
   workflow_dispatch:
   workflow_call:
 
