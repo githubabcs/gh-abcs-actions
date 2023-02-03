@@ -72,6 +72,7 @@
 - [GitHub Actions Toolkit](https://github.com/actions/toolkit)
 - [Reusing workflows](https://docs.github.com/en/enterprise-cloud@latest/actions/using-workflows/reusing-workflows)
 - [How to start using reusable workflows with GitHub Actions](https://github.blog/2022-02-10-using-reusable-workflows-github-actions/)
+- [Required workflows](https://docs.github.com/en/actions/using-workflows/required-workflows)
 - [Creating Actions](https://docs.github.com/en/actions/creating-actions)
 - [Security guides](https://docs.github.com/en/actions/security-guides)
 - [GitHub Blog](https://github.blog/)
@@ -85,6 +86,9 @@
 
 ### Actions Changelog
 - [Changelog](https://github.blog/changelog/label/actions/)
+- [GitHub Actions - Sharing actions and reusable workflows from private repositories is now GA](https://github.blog/changelog/2022-12-14-github-actions-sharing-actions-and-reusable-workflows-from-private-repositories-is-now-ga/)
+- [GitHub Actions: Restrict workflows to specific runners using runner group names](https://github.blog/changelog/2022-11-01-github-actions-restrict-workflows-to-specific-runners-using-runner-group-names/)
+- [GitHub Actions: Use the GITHUB_TOKEN with workflow_dispatch and repository_dispatch](https://github.blog/changelog/2022-09-08-github-actions-use-github_token-with-workflow_dispatch-and-repository_dispatch/)
 - [GitHub Actions: Improvements to reusable workflows](https://github.blog/changelog/2022-08-22-github-actions-improvements-to-reusable-workflows-2/)
 - [GitHub Actions: Enhance your actions with job summaries](https://github.blog/changelog/2022-05-09-github-actions-enhance-your-actions-with-job-summaries/)
 - [Reusable workflows can be referenced locally](https://github.blog/changelog/2022-01-25-github-actions-reusable-workflows-can-be-referenced-locally/)
@@ -100,3 +104,5 @@
 - [Supercharging GitHub Actions with Job Summaries](https://github.blog/2022-05-09-supercharging-github-actions-with-job-summaries/)
 - [Keeping your actions up to date with Dependabot](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot)
 - [GitHub Actions for security and compliance](https://github.blog/2021-10-22-github-actions-for-security-compliance/)
+- [Triggering a workflow from a workflow](https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#triggering-a-workflow-from-a-workflow)
+- [Introducing required workflows and configuration variables to GitHub Actions](https://github.blog/2023-01-10-introducing-required-workflows-and-configuration-variables-to-github-actions/)
