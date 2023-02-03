@@ -73,6 +73,7 @@
 - [Reusing workflows](https://docs.github.com/en/enterprise-cloud@latest/actions/using-workflows/reusing-workflows)
 - [How to start using reusable workflows with GitHub Actions](https://github.blog/2022-02-10-using-reusable-workflows-github-actions/)
 - [Required workflows](https://docs.github.com/en/actions/using-workflows/required-workflows)
+- [Defining configuration variables for multiple workflows](https://docs.github.com/en/actions/learn-github-actions/variables#defining-configuration-variables-for-multiple-workflows)
 - [Creating Actions](https://docs.github.com/en/actions/creating-actions)
 - [Security guides](https://docs.github.com/en/actions/security-guides)
 - [GitHub Blog](https://github.blog/)
