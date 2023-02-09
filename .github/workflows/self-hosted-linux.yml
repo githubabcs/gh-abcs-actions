@@ -1,4 +1,4 @@
-name: 06-1. Self-Hosted Linux Hello - Never run on pulic repo
+name: 06-1. Self-Hosted Linux Hello - Never run on public repo
 
 on:
   workflow_dispatch:
