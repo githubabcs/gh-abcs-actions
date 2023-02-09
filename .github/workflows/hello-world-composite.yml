@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: hello-world
-        uses: ./.github/actions/hello-world-composite-action@main
+        uses: ./.github/actions/hello-world-composite-action
         with:
           who-to-greet: 'Mona the Octocat from composite action'
       - run: echo random-number from composite action ${{ steps.hello-world.outputs.random-number }}
