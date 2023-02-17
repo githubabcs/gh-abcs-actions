@@ -52,7 +52,7 @@ jobs:
     needs: ci
     environment:
       name: TEST
-      url: https://test.company.com
+      url: https://loopy3025.github.io/gh-abcs-actions/
     steps:
       - name: Checkout
         uses: actions/checkout@v3
