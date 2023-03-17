@@ -1,5 +1,6 @@
 name: 07-1. CI Workflow
 
+
 # Trigger CI for every PR event, when PR has target branch = main
 on:
   push:
