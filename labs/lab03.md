@@ -14,7 +14,7 @@ References:
     - [Add required reviewers](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#required-reviewers)
     - [Create an encrypted secret in the environment](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment) called `MY_ENV_SECRET`.
 2. Follow the guide to create a new repository secret called `MY_REPO_SECRET`
-    - [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)    
+    - [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)
 4. Open the workflow file [environments-secrets.yml](/.github/workflows/environments-secrets.yml)
 5. Edit the file and copy the following YAML content as a first job (after the `jobs:` line):
 ```YAML
