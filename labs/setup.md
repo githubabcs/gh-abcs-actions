@@ -1,6 +1,6 @@
 # Hands-on Labs Setup
 In this lab you will fork the repository and enable the GitHub Actions
-> Duration: 5-10 minutes
+>  Duration: 5-10 minutes
 
 References:
 - [Fork a repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
