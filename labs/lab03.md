@@ -9,16 +9,14 @@ References:
 
 ## 3.1 Create new encrypted secrets
 
-1. Follow the guide to create a new environment called `UAT`
+1. Follow the guide to create a new environment called `UAT`, add a reviewer and an environment variable.
     - [Creating an environment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#creating-an-environment)
-    - Add a required reviewer for your environment
-    - [Required reviewers](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#required-reviewers)
+    - [Add required reviewers](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#required-reviewers)
+    - [Create an encrypted secret in the environment](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment) called `MY_ENV_SECRET`.
 2. Follow the guide to create a new repository secret called `MY_REPO_SECRET`
-    - [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)
-3. Follow the guide to create a new env secret called `MY_ENV_SECRET`
-    - [Creating encrypted secrets for an environment](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment)
+    - [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)    
 4. Open the workflow file [environments-secrets.yml](/.github/workflows/environments-secrets.yml)
-5. Edit the file and copy the following YAML content as first job (after the `jobs:` line):
+5. Edit the file and copy the following YAML content as a first job (after the `jobs:` line):
 ```YAML
 
   use-secrets:
@@ -39,7 +37,7 @@ References:
           echo          but you should avoid printing secrets to the log intentionally.
           echo ${{ secrets.MY_REPO_SECRET }} | sed 's/./& /g'
 ```
-6. Update the workflow to run on push and pull_request events
+6. Update the workflow to also run on push and pull_request events
 ```YAML
 on:
   push:
@@ -75,7 +73,7 @@ on:
           env_secret: ${{ secrets.MY_ENV_SECRET }}
 
 ```
-7. Change the PROD job to depend on UAT deployment
+7. Inside the `use-environment-prod` job, replace `needs: use-environment-test` with:
 ```YAML
     needs: use-environment-uat
 ```
