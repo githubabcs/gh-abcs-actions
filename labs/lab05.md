@@ -28,7 +28,7 @@ References:
             })
 ```
 3. Commit the changes into the `main` branch
-4. Open a new issue or edit an exiting one to trigger the workflow
+4. Open a new issue or edit an exiting one to trigger the workflow. If the `Issues` tab is not visible, open your repository settings and enable it.
 5. Go to `Actions` and see the details of your running workflow
 6. After the workflow completes, a new label should be applied to your issue
 
