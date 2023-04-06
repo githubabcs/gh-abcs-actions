@@ -38,3 +38,110 @@ on:
 > Make sure it is your repository pull request to not propose changes to the upstream repository. From the drop-down list choose the base repository to be yours.
 11. Complete the pull request and delete the source branch
 12. Go to `Actions` and see the details of your running workflow
+
+## Complete files
+<details>
+  <summary>job-dependencies.yml</summary>
+  
+```YAML
+name: 02-2. Dependencies 
+
+on:
+  workflow_call:
+    
+jobs:
+  initial:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This job will be run first."
+  fanout1:
+    runs-on: ubuntu-latest
+    needs: initial
+    steps:
+      - run: echo "This job will run after the initial job, in parallel with fanout2."
+  fanout2:
+    runs-on: ubuntu-latest
+    needs: initial
+    steps:
+      - run: echo "This job will run after the initial job, in parallel with fanout1."
+  fanout3:
+    runs-on: ubuntu-latest
+    needs: fanout1
+    steps:
+      - run: echo "This job will run after the initial job, in parallel with fanout2."
+  fanin:
+    runs-on: ubuntu-latest
+    needs: [fanout1, fanout2]
+    steps:
+      - run: echo "This job will run after fanout1 and fanout2 have finished."
+  build:
+    runs-on: ubuntu-latest  
+    strategy:
+      matrix:
+        configuration: [debug, release]
+    steps:
+    - run: echo "This job builds the cofiguration ${{ matrix.configuration }}."
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: echo "This job will be run after the build job."
+  ring01:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - run: echo "This job will be run after the test job."
+  ring02:
+    runs-on: macos-latest
+    needs: test
+    steps:
+      - run: echo "This job will be run after the test job."
+  ring03:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - run: echo "This job will be run after the test job."
+  ring04:
+    runs-on: ubuntu-latest
+    needs: [ring01,ring02,ring03]
+    steps:
+      - run: echo "This job will be run after the ring01,ring02,ring03 jobs."
+  prod:
+    runs-on: ubuntu-latest
+    needs: [ring04]
+    steps:
+      - run: echo "This job will be run after the ring04 job."
+```
+  </details>
+
+<details>
+<summary>reusable-workflow-template.yml</summary>
+  
+```YAML
+name: 04-1. Call Reusable Workflow Templates
+
+on:
+  push:
+     branches: [main]
+  workflow_dispatch:    
+
+jobs:
+  call_greet_everyone_workflow_job:
+    uses: githubabcs/gh-abcs-actions/.github/workflows/greet-everyone.yml@main
+    with:
+      name: 'Reusable Workflow Templates'
+    
+  call_reusable_workflow_job:
+    uses: githubabcs/gh-abcs-actions/.github/workflows/super-linter.yml@main
+
+  call_demo_workflow_job:
+    needs: call_greet_everyone_workflow_job
+    uses: githubabcs/gh-abcs-actions/.github/workflows/github-actions-demo.yml@main
+  
+  call_dependencies_workflow_job:
+    needs: call_reusable_workflow_job
+    uses: <YOUR_USER_ACCOUNT>/gh-abcs-actions/.github/workflows/job-dependencies.yml@main
+
+```
+</details>
+
