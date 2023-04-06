@@ -97,3 +97,185 @@ on:
         with:
             who-to-greet: 'Mona the Octocat'
 ```
+
+## Completed files
+<details>
+  <summary>github-script.yml</summary>
+  
+```YAML
+name: 05-1. GitHub Script - Thank you
+on:
+  issues: 
+    types: [opened, edited, reopened, labeled]
+
+# Limit the permissions of the GITHUB_TOKEN
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thank you! We appreciate your contribution to this project.'
+            })
+  apply-label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['Training']
+            })
+```
+</details>
+
+<details>
+  <summary>hello-world-composite-action/action.yml</summary>
+  
+```YAML
+name: 'Hello World Composite Action'
+description: 'Greet someone'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
+runs:
+  using: "composite"
+  steps:
+    - run: echo Hello from composite action ${{ inputs.who-to-greet }}.
+      shell: bash
+    - id: random-number-generator
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      shell: bash
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash    
+    - name: Hello world
+      uses: actions/hello-world-javascript-action@v1
+      with:
+        who-to-greet: "${{ inputs.who-to-greet }}"
+      id: hello
+    - name: Echo the greeting's time
+      run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+      shell: bash      
+
+```
+</details>
+
+<details>
+  <summary>hello-world-composite.yml</summary>
+  
+```YAML
+name: 05-2. Hello World Composite
+
+on:
+  pull_request:
+     branches: [main]
+  workflow_dispatch:  
+
+jobs:
+  hello_world_job1:
+    runs-on: ubuntu-latest
+    name: A job1 to say hello
+    steps:
+      - id: hello-world
+        uses: githubabcs/hello-world-composite-action@main
+        with:
+          who-to-greet: 'Hello from GH ABCs'
+      - run: echo random-number ${{ steps.hello-world.outputs.random-number }}
+        shell: bash
+  hello_world_job2:
+    runs-on: ubuntu-latest
+    name: A job2 to say hello
+    steps:
+      - uses: actions/checkout@v2
+      - id: hello-world
+        uses: ./.github/actions/hello-world-composite-action
+        with:
+          who-to-greet: 'Mona the Octocat from composite action'
+      - run: echo random-number from composite action ${{ steps.hello-world.outputs.random-number }}
+        shell: bash
+```
+</details>
+
+<details>
+  <summary>use-custom-actions.yml</summary>
+  
+```YAML
+name: 05-3. Use Custom Actions (JS & Doker)
+
+on:
+  pull_request:
+    types: [labeled]
+  workflow_dispatch:
+
+# Limit the permissions of the GITHUB_TOKEN
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  
+  js-custom-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: echo "🎉 Running the JS actions"
+
+      - name: hello-action
+        uses: ./.github/actions/hello-world-js
+        if: ${{ success() }}
+
+      - name: ha-ha
+        uses: ./.github/actions/joke-action
+        id: jokes
+
+      - name: create-issue
+        uses: ./.github/actions/issue-maker-js
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          joke: ${{steps.jokes.outputs.joke-output}}
+          issue-title: "A joke for you from custom actions workflow"       
+
+  docker-custom-actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: echo "🎉 Running the Docker actions"
+
+      - name: hello-action
+        uses: ./.github/actions/hello-world-docker
+
+      - name: meow
+        uses: ./.github/actions/cat-facts
+        id: cat
+
+      - name: create-issue
+        uses: ./.github/actions/issue-maker-docker
+        with:
+          repoToken: ${{secrets.GITHUB_TOKEN}}
+          catFact: ${{steps.cat.outputs.fact}}
+          issueTitle: "A cat fact for you from ${{ github.repository_owner }}"
+
+```
+</details>
