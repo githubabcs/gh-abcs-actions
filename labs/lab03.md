@@ -83,7 +83,7 @@ on:
     - [Reviewing deployments](https://docs.github.com/en/actions/managing-workflow-runs/reviewing-deployments)
 11. Go to `Settings` > `Environments` and update the `PROD` environment created to protect it with approvals (same as UAT)
 
-## Complete files
+## Completed files
 <details>
   <summary>environments-secrets.yml</summary>
   
