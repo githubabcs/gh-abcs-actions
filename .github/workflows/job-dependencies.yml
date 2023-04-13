@@ -1,6 +1,7 @@
 name: 02-2. Dependencies 
 
 on:
+  workflow_call:
   workflow_dispatch:
   push:
     branches:
@@ -54,6 +55,183 @@ jobs:
     steps:
       - run: echo "This job will be run after the test job."
   ring03:
+ 
+
+Spaces
+
+2
+
+No wrap
+1
+name: 02-2. Dependencies 
+2
+​
+3
+on:
+4
+  workflow_call:
+5
+  workflow_dispatch:
+6
+  push:
+7
+    branches:
+8
+      - main
+9
+    
+10
+jobs:
+11
+  initial:
+12
+    runs-on: ubuntu-latest
+13
+    steps:
+14
+      - run: echo "This job will be run first."
+15
+  fanout1:
+16
+    runs-on: ubuntu-latest
+17
+    needs: initial
+18
+    steps:
+19
+      - run: echo "This job will run after the initial job, in parallel with fanout2."
+20
+  fanout2:
+21
+    runs-on: ubuntu-latest
+22
+    needs: initial
+23
+    steps:
+24
+      - run: echo "This job will run after the initial job, in parallel with fanout1."
+25
+  fanout3:
+26
+    runs-on: ubuntu-latest
+27
+    needs: [initial, fanout1]
+28
+    steps:
+29
+      - run: echo "This job will run after the initial job, in parallel with fanout2."
+30
+  fanin:
+31
+    runs-on: ubuntu-latest
+32
+    needs: [fanout1, fanout2]
+33
+    steps:
+34
+      - run: echo "This job will run after fanout1 and fanout2 have finished."
+35
+  build:
+36
+    runs-on: ubuntu-latest  
+37
+    strategy:
+38
+      matrix:
+39
+        configuration: [debug, release]
+40
+    steps:
+41
+    - run: echo "This job builds the cofiguration ${{ matrix.configuration }}."
+42
+  test:
+43
+    runs-on: ubuntu-latest
+44
+    needs: build
+45
+    steps:
+46
+      - run: echo "This job will be run after the build job."
+47
+  ring01:
+48
+    runs-on: ubuntu-latest
+49
+    needs: test
+50
+    steps:
+51
+      - run: echo "This job will be run after the test job."
+52
+  ring02:
+53
+    runs-on: macos-latest
+54
+    needs: test
+55
+    steps:
+56
+      - run: echo "This job will be run after the test job."
+57
+  ring03:
+58
+    runs-on: ubuntu-latest
+59
+    needs: test
+60
+    steps:
+61
+      - run: echo "This job will be run after the test job."
+62
+  ring04:
+63
+    runs-on: ubuntu-latest
+64
+    needs: [ring01,ring02,ring03]
+65
+    steps:
+66
+      - run: echo "This job will be run after the ring01,ring02,ring03 jobs."
+67
+  prod:
+68
+    runs-on: ubuntu-latest
+69
+    needs: [ring04]
+70
+    steps:
+71
+      - run: echo "This job will be run after the ring04 job."
+72
+​
+Use Control + Space to trigger autocomplete in most situations.
+Search Marketplace for Actions
+Featured Actions
+
+Cache artifacts like dependencies and build outputs to improve workflow execution time
+
+ 3.6k
+
+Upload a build artifact that can be used by subsequent workflow steps
+
+ 2.2k
+
+Set up a specific version of the Java JDK and add the command-line tools to the PATH
+
+ 1.1k
+
+Close issues and pull requests with no recent activity
+
+ 944
+
+Greet new contributors when they create their first issue or open their first pull request
+
+ 591
+Featured categories
+Browse all actions on the GitHub Marketplace
+
     runs-on: ubuntu-latest
     needs: test
     steps:
