@@ -2,9 +2,9 @@ name: 02-2. Dependencies
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
     
 jobs:
   initial:
@@ -38,3 +38,4 @@ jobs:
         configuration: [debug, release]
     steps:
     - run: echo "This job builds the cofiguration ${{ matrix.configuration }}."
+ 
