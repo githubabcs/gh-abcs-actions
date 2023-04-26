@@ -1,15 +1,14 @@
 name: 02-2. Dependencies 
 
 on:
+  push:
+     branches: [main]
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
 
 
 on:
   workflow_call:
-   
+
 jobs:
   initial:
     runs-on: ubuntu-latest
