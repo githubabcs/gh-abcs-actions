@@ -5,7 +5,11 @@ on:
   # push:
   #   branches:
   #     - main
-    
+
+
+on:
+  workflow_call:
+   
 jobs:
   initial:
     runs-on: ubuntu-latest
