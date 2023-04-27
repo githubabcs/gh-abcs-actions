@@ -37,7 +37,8 @@ jobs:
       matrix:
         configuration: [debug, release]
     steps:
-    - run: echo "This job builds the cofiguration ${{ matrix.configuration }}."  test:
+    - run: echo "This job builds the cofiguration ${{ matrix.configuration }}."  
+  test:
     runs-on: ubuntu-latest
     needs: build
     steps:
