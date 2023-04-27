@@ -60,7 +60,7 @@ jobs:
       - run: echo "This job will be run after the test job."
   ring04:
     runs-on: ubuntu-latest
-    needs: [ring01,ring02,ring03]
+    needs: [ring01,ring02,ring03,fanin]
     steps:
       - run: echo "This job will be run after the ring01,ring02,ring03 jobs."
   prod:
