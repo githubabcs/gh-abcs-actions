@@ -4,7 +4,7 @@
 ## Examples & Hands-on Labs
 
 ### Hands-on Labs Setup
-- [ ] [Lab Setup](/labs/setup.md)
+- [ x] [Lab Setup](/labs/setup.md)
 
 ### Module 1: Introduction to GitHub Actions
 - Example: [github-actions-demo.yml](/.github/workflows/github-actions-demo.yml)
