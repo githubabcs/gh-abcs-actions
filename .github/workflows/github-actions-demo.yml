@@ -2,9 +2,9 @@ name: 01-1. GitHub Actions Demo
 on: 
   workflow_dispatch:
   workflow_call:
-push:
-    branches:
-      - main
+  push:
+      branches:
+        - main
     #paths:
     #  - 'labs/**'
 jobs:
