@@ -66,7 +66,7 @@ on:
 4. Commit the changes into the `main` branch
 5. Go to `Actions` and see the details of your running workflow
 
-## Completed files
+## 7.3 Final
 <details>
   <summary>ci-workflow.yml</summary>
   
