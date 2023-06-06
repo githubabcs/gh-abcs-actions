@@ -65,3 +65,166 @@ on:
 ```
 4. Commit the changes into the `main` branch
 5. Go to `Actions` and see the details of your running workflow
+
+## 7.3 Final
+<details>
+  <summary>ci-workflow.yml</summary>
+  
+```YAML
+name: 07-1. CI Workflow
+
+# Trigger CI for every PR event, when PR has target branch = main
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # The first job lints the code base
+  lint:
+    uses: githubabcs/gh-abcs-actions/.github/workflows/super-linter.yml@main
+
+  # CI job to run a test suite on the code base
+  ci:
+    name: CI
+    # We want to test across mutiple OSs, defined by our matrix
+    runs-on: ${{ matrix.os }}
+    needs: lint
+    strategy:
+      # Cancel all matrix jobs if one of them fails
+      fail-fast: true
+      matrix:
+        # our matrix for testing across node versions and OSs
+        node-version: [12, 14, 16]
+        os: [macos-latest, windows-latest, ubuntu-latest]
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Configure our node environment according to matrix
+      - name: Setup node ${{ matrix.node-version }} on ${{ matrix.os }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Run test suite
+        run: |
+          echo npm ci
+          echo npm run build --if-present
+          echo npm test
+
+      # Add here the upload-artifact action
+      - shell: bash
+        run: |
+          echo 'Test upload artifact' > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-log-file
+          path: output.log
+
+  # If both linting and CI succeeds we want to deploy the code to a test environment
+  deploy-test:
+    name: Deploy to test env
+    runs-on: ubuntu-latest
+    needs: ci
+    environment:
+      name: TEST
+      url: https://test.company.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Add here the download-artifact step
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: output-log-file
+
+      # Placeholder - this step would be some action or run commands that deploys the code
+      - name: Deploy to test env
+        if: ${{ success() }}
+        run: |
+          echo "Deploying to test environment"
+
+```
+</details>
+
+<details>
+  <summary>cd-workflow.yml</summary>
+  
+```YAML
+name: 07-2. CD Workflow 
+
+on:
+  push:
+     branches: [main]
+
+env:
+  AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: '14.x'                # set this to the node version to use
+
+# We only want to allow one deploy-to-prod workflow running at any point in time
+concurrency: 
+  group: cd-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+
+    - name: npm install, build, and test
+      run: |
+        echo npm install
+        echo npm run build --if-present
+        echo npm run test --if-present
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: node-app
+        path: .
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+
+    environment:
+      name: PROD
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    
+    # Add here the download-artifact step
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v2
+      with:
+        name: node-app
+
+    - name: Deploy to Prod
+      if: ${{ success() }}
+      run: echo "Specific deploy steps..."
+
+    - name: 'Deploy to Azure WebApp'
+      id: deploy-to-webapp 
+      uses: azure/webapps-deploy@v2
+      continue-on-error: true
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+```
+</details>
