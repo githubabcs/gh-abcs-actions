@@ -39,7 +39,7 @@ on:
 11. Complete the pull request and delete the source branch
 12. Go to `Actions` and see the details of your running workflow
 
-## Completed files
+## 4.2 Final
 <details>
   <summary>job-dependencies.yml</summary>
   
