@@ -79,11 +79,11 @@
 - [GitHub Blog](https://github.blog/)
 - [Awesome Actions](https://github.com/sdras/awesome-actions)
 
-### Adopting GitHub Actions at scale
+### GitHub self-hosted runners on Kubernetes
 - [Autoscaling with self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners)
-- [Adopting GitHub Actions at scale](https://www.youtube.com/playlist?list=PL0lo9MOBetEEk9gIFox8EbCf1Co_4ppIO)
-- [actions-at-scale-ghoh](https://github.com/Link-/actions-at-scale-ghoh)
-- [actions-runner-controller](https://github.com/actions-runner-controller/actions-runner-controller)
+- [actions-runner-controller - A Kubernetes controller for GitHub Actions self-hosted runners.](https://github.com/actions-runner-controller/actions-runner-controller)
+- [GitHub Self-Hosted Runner Autoscaling with Kubernetes]https://tgrall.github.io/blog/2022/10/16/github-self-hosted-runner-autoscaling-with-kubernetes)
+- [GitHub Actions: Dive into actions-runner-controller (ARC)](https://www.youtube.com/watch?v=_F5ocPrv6io)
 
 ### Actions Changelog
 - [Changelog](https://github.blog/changelog/label/actions/)

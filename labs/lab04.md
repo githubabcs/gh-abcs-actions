@@ -47,6 +47,10 @@ on:
 name: 02-2. Dependencies 
 
 on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
   workflow_call:
     
 jobs:

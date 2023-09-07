@@ -15,7 +15,7 @@ runs:
     - run: echo Hello from composite action ${{ inputs.who-to-greet }}.
       shell: bash
     - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      run: echo "random-id=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash          

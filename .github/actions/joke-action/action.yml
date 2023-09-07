@@ -7,5 +7,5 @@ outputs:
     description: The resulting joke from the icanhazdadjokes API
 
 runs:
-  using: "node12"
+  using: "node16"
   main: "dist/index.js"

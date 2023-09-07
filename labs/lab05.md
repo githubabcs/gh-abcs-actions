@@ -38,7 +38,7 @@ References:
 2. Edit the file and copy the following YAML content at the end of the file:
 ```YAML
     - name: Hello world
-      uses: actions/hello-world-javascript-action@v1
+      uses: actions/hello-world-javascript-action@main
       with:
         who-to-greet: "${{ inputs.who-to-greet }}"
       id: hello
@@ -54,7 +54,7 @@ References:
     runs-on: ubuntu-latest
     name: A job2 to say hello
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - id: hello-world
         uses: ./.github/actions/hello-world-composite-action
         with:
@@ -163,12 +163,12 @@ runs:
     - run: echo Hello from composite action ${{ inputs.who-to-greet }}.
       shell: bash
     - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+      run: echo "random-id=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash    
     - name: Hello world
-      uses: actions/hello-world-javascript-action@v1
+      uses: actions/hello-world-javascript-action@main
       with:
         who-to-greet: "${{ inputs.who-to-greet }}"
       id: hello
@@ -205,7 +205,7 @@ jobs:
     runs-on: ubuntu-latest
     name: A job2 to say hello
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - id: hello-world
         uses: ./.github/actions/hello-world-composite-action
         with:

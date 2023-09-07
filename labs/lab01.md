@@ -29,7 +29,7 @@ References:
 ```YAML
         # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
       - name: Hello world
-        uses: actions/hello-world-javascript-action@v1
+        uses: actions/hello-world-javascript-action@main
         with:
           who-to-greet: "Mona the Octocat"
         id: hello
@@ -74,7 +74,7 @@ jobs:
         run: echo "### Hello world! :rocket:" >> "$GITHUB_STEP_SUMMARY"
       # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
       - name: Hello world
-        uses: actions/hello-world-javascript-action@v1
+        uses: actions/hello-world-javascript-action@main
         with:
           who-to-greet: "Mona the Octocat"
         id: hello
