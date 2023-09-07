@@ -101,7 +101,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Configure our node environment according to matrix
       - name: Setup node ${{ matrix.node-version }} on ${{ matrix.os }}
@@ -135,7 +135,7 @@ jobs:
       url: https://test.company.com
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Add here the download-artifact step
       - name: Download a single artifact
@@ -177,7 +177,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
