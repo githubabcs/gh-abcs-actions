@@ -1,4 +1,4 @@
-name: 03-2. Review Pending Deployments
+name: 03-2. Review Pending Deployments (WIP)
 on: 
   workflow_dispatch:
     inputs:

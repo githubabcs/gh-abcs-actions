@@ -3,5 +3,5 @@ name: "my hello action JS"
 description: "say hello with GitHub Actions"
 
 runs:
-  using: "node12"
+  using: "node16"
   main: "dist/index.js"

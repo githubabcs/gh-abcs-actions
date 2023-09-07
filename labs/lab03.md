@@ -25,7 +25,7 @@ References:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     steps:
       - name: Hello world action with secrets
-        uses: actions/hello-world-javascript-action@v1
+        uses: actions/hello-world-javascript-action@main
         with: # Set the secret as an input
           who-to-greet: ${{ secrets.MY_REPO_SECRET }}
         env: # Or as an environment variable
@@ -115,7 +115,7 @@ jobs:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     steps:
       - name: Hello world action with secrets
-        uses: actions/hello-world-javascript-action@v1
+        uses: actions/hello-world-javascript-action@main
         with: # Set the secret as an input
           who-to-greet: ${{ secrets.MY_REPO_SECRET }}
         env: # Or as an environment variable

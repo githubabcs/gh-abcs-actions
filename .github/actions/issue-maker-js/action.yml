@@ -13,5 +13,5 @@ inputs:
     description: "Token with permissions to do repo things"
 
 runs:
-  using: "node12"
+  using: "node16"
   main: "dist/index.js"
