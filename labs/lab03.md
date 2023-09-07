@@ -143,7 +143,7 @@ jobs:
       - run: echo "Run id = ${{ github.run_id }}"
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Step that uses the DEV environment
         run: echo "Deployment to ${{ env.URL1 }}..."
@@ -165,7 +165,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Step that uses the TEST environment
         run: echo "Deployment to ${{ env.DOCS_URL }}..."
@@ -206,7 +206,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Step that uses the PROD environment
         run: echo "Deployment to ${{ env.PROD_URL }}..."

@@ -54,7 +54,7 @@ References:
     runs-on: ubuntu-latest
     name: A job2 to say hello
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - id: hello-world
         uses: ./.github/actions/hello-world-composite-action
         with:
@@ -205,7 +205,7 @@ jobs:
     runs-on: ubuntu-latest
     name: A job2 to say hello
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - id: hello-world
         uses: ./.github/actions/hello-world-composite-action
         with:
@@ -236,7 +236,7 @@ jobs:
   js-custom-actions:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - run: echo "🎉 Running the JS actions"
 
@@ -259,7 +259,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - run: echo "🎉 Running the Docker actions"
 
