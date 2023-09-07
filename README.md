@@ -82,7 +82,7 @@
 ### GitHub self-hosted runners on Kubernetes
 - [Autoscaling with self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners)
 - [actions-runner-controller - A Kubernetes controller for GitHub Actions self-hosted runners.](https://github.com/actions-runner-controller/actions-runner-controller)
-- [GitHub Self-Hosted Runner Autoscaling with Kubernetes]https://tgrall.github.io/blog/2022/10/16/github-self-hosted-runner-autoscaling-with-kubernetes)
+- [GitHub Self-Hosted Runner Autoscaling with Kubernetes](https://tgrall.github.io/blog/2022/10/16/github-self-hosted-runner-autoscaling-with-kubernetes)
 - [GitHub Actions: Dive into actions-runner-controller (ARC)](https://www.youtube.com/watch?v=_F5ocPrv6io)
 
 ### Actions Changelog
