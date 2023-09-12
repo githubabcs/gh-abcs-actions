@@ -25,3 +25,13 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Adding markdown
         run: echo "### Hello world! :rocket:" >> "$GITHUB_STEP_SUMMARY"
+
+        # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
+      - name: Hello world
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: "Mona the Octocat"
+        id: hello
+      # This step prints an output (time) from the previous step's action.
+      - name: Echo the greeting's time
+        run: echo 'The time was ${{ steps.hello.outputs.time }}.'   
