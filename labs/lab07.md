@@ -28,7 +28,7 @@ References:
         run: |
           echo 'Test upload artifact' > output.log
       - name: Upload output file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: output-log-file
           path: output.log
@@ -36,7 +36,7 @@ References:
 4. In the `deploy-test` job, after the `checkout` action, copyt the following YAML content to use the `download-artifact` action
 ```YAML
       - name: Download a single artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: output-log-file
 ```
@@ -53,7 +53,7 @@ References:
 2. Edit the file and copy the following YAML content before the `Deploy to production` step:
 ```YAML
     - name: Download artifact from build job
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: node-app
 ```
@@ -105,7 +105,7 @@ jobs:
 
       # Configure our node environment according to matrix
       - name: Setup node ${{ matrix.node-version }} on ${{ matrix.os }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -120,7 +120,7 @@ jobs:
         run: |
           echo 'Test upload artifact' > output.log
       - name: Upload output file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: output-log-file
           path: output.log
@@ -139,7 +139,7 @@ jobs:
 
       # Add here the download-artifact step
       - name: Download a single artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: output-log-file
 
@@ -180,7 +180,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ env.NODE_VERSION }}
 
@@ -191,7 +191,7 @@ jobs:
         echo npm run test --if-present
 
     - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: node-app
         path: .
@@ -209,7 +209,7 @@ jobs:
     
     # Add here the download-artifact step
     - name: Download artifact from build job
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: node-app
 
@@ -219,7 +219,7 @@ jobs:
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp 
-      uses: azure/webapps-deploy@v2
+      uses: azure/webapps-deploy@v3
       continue-on-error: true
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
