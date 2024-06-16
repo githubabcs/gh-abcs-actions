@@ -32,7 +32,7 @@ jobs:
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           joke: ${{steps.jokes.outputs.joke-output}}
-          issue-title: "A joke for you from ${{ github.actor }}"      
+          issue-title: "A joke for you from custom actions workflow"       
 
   docker-custom-actions:
     runs-on: ubuntu-latest
