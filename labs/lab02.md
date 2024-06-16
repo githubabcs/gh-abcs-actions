@@ -61,7 +61,7 @@ References:
       matrix:
         configuration: [debug, release]
     steps:
-    - run: echo "This job builds the cofiguration ${{ matrix.configuration }}."
+    - run: echo "This job builds the configuration ${{ matrix.configuration }}."
 ```
 2. Update the workflow to run on push events
 ```YAML
