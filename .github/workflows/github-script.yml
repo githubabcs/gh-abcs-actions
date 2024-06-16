@@ -22,3 +22,15 @@ jobs:
               repo: context.repo.repo,
               body: '👋 Thank you! We appreciate your contribution to this project.'
             })
+  apply-label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['Training']
+            })
