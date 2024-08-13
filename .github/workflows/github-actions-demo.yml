@@ -6,8 +6,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'labs/**'
 
 jobs:
   Explore-GitHub-Actions:
