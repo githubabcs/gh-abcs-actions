@@ -31,3 +31,37 @@ jobs:
     needs: [fanout1, fanout2]
     steps:
       - run: echo "This job will run after fanout1 and fanout2 have finished."
+        build:
+    runs-on: windows-latest
+    steps:
+      - run: echo "This job will be run in parallel with the initial job."
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: echo "This job will be run after the build job."
+  ring01:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - run: echo "This job will be run after the test job."
+  ring02:
+    runs-on: macos-latest
+    needs: test
+    steps:
+      - run: echo "This job will be run after the test job."
+  ring03:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - run: echo "This job will be run after the test job."
+  ring04:
+    runs-on: ubuntu-latest
+    needs: [ring01,ring02,ring03]
+    steps:
+      - run: echo "This job will be run after the ring01,ring02,ring03 jobs."
+  prod:
+    runs-on: ubuntu-latest
+    needs: [ring04]
+    steps:
+      - run: echo "This job will be run after the ring04 job."
