@@ -30,3 +30,4 @@ References:
 - [ ] Module 7: CI/CD
 ```
 7. Fetch upstream to get the latest changes from the upstream repository
+8. the end
