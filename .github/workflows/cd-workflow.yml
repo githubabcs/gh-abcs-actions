@@ -1,9 +1,8 @@
 name: 07-2. CD Workflow 
 
 on:
-  # push:
-  #   branches: [main]
-  workflow_dispatch:
+   push:
+     branches: [main]
 
 env:
   AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name
@@ -51,7 +50,10 @@ jobs:
     steps:
     
     # Add here the download-artifact step
-    
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v4
+      with:
+        name: node-app
 
     - name: Deploy to Prod
       if: ${{ success() }}

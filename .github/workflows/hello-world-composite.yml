@@ -1,7 +1,9 @@
 name: 05-2. Hello World Composite
 
-on: 
-  [workflow_dispatch]
+on:
+  pull_request:
+     branches: [main]
+  workflow_dispatch: 
 
 jobs:
   hello_world_job1:
@@ -13,4 +15,16 @@ jobs:
         with:
           who-to-greet: 'Hello from GH ABCs'
       - run: echo random-number ${{ steps.hello-world.outputs.random-number }}
+        shell: bash
+
+  hello_world_job2:
+    runs-on: ubuntu-latest
+    name: A job2 to say hello
+    steps:
+      - uses: actions/checkout@v4
+      - id: hello-world
+        uses: ./.github/actions/hello-world-composite-action
+        with:
+          who-to-greet: 'Mona the Octocat from composite action'
+      - run: echo random-number from composite action ${{ steps.hello-world.outputs.random-number }}
         shell: bash
