@@ -50,7 +50,7 @@ on:
 8. Go to `Actions` and see the details of your running workflow
 
 
-## 3.2 Add a new workflow job to deploy to UAT environment
+## 3.2 Add a new workflow job to deploy to UAT environment (done)
 
 1. Open the workflow file [environments-secrets.yml](/.github/workflows/environments-secrets.yml)
 2. Edit the file and copy the following YAML content between the test and prod jobs (before the `use-environment-prod:` line):
