@@ -22,7 +22,7 @@ References:
 5. Commit the changes into the `main` branch
 6. Go to `Actions` and see the details of your running workflow
 
-## 1.2 Add steps to your workflow
+## 1.2 Add steps to your workflow (done)
 
 1. Open the workflow file [github-actions-demo.yml](/.github/workflows/github-actions-demo.yml)
 2. Edit the file and copy the following YAML content at the end of the file:
