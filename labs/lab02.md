@@ -7,7 +7,7 @@ References:
 - [Using jobs in a workflow](https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow)
 - [Environment variables](https://docs.github.com/en/actions/learn-github-actions/environment-variables)
 
-## 2.1 Add new jobs with dependencies
+## 2.1 Add new jobs with dependencies (done)
 
 1. Open the workflow file [job-dependencies.yml](/.github/workflows/job-dependencies.yml)
 2. Edit the file and copy the following YAML content at the end of the file:

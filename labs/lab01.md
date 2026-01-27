@@ -6,7 +6,7 @@ References:
 - [Events that trigger workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
 - [Adding an action to your workflow](https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions#adding-an-action-to-your-workflow)
 
-## 1.1 Update the workflow to trigger when a change is made to the labs folder on main branch
+## 1.1 Update the workflow to trigger when a change is made to the labs folder on main branch (done)
 
 1. Open the workflow file [github-actions-demo.yml](/.github/workflows/github-actions-demo.yml)
 2. Edit the file and copy the following YAML content after line 4:
@@ -22,7 +22,7 @@ References:
 5. Commit the changes into the `main` branch
 6. Go to `Actions` and see the details of your running workflow
 
-## 1.2 Add steps to your workflow
+## 1.2 Add steps to your workflow (done)
 
 1. Open the workflow file [github-actions-demo.yml](/.github/workflows/github-actions-demo.yml)
 2. Edit the file and copy the following YAML content at the end of the file:
